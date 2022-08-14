@@ -1,19 +1,19 @@
 import Foundation
 
-protocol FeedModuleInput {
-		var moduleOutput: FeedModuleOutput? { get }
+protocol MainModuleInput {}
+
+protocol MainModuleOutput: AnyObject {}
+
+protocol MainViewInput: AnyObject {}
+
+protocol MainViewOutput: AnyObject {
+	func viewDidLoad()
 }
 
-protocol FeedModuleOutput: AnyObject {}
+protocol MainInteractorInput: AnyObject {}
 
-protocol FeedViewInput: AnyObject {}
+protocol MainInteractorOutput: AnyObject {}
 
-protocol FeedViewOutput: AnyObject {
-		func viewDidLoad()
-}
+protocol MainRouterInput: AnyObject {}
 
-protocol FeedInteractorInput: AnyObject {}
-
-protocol FeedInteractorOutput: AnyObject {}
-
-protocol FeedRouterInput: AnyObject {}
+protocol MainRouterRoutingHandler: AnyObject {}

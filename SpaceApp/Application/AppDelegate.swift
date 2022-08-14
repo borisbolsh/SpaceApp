@@ -4,13 +4,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 
+	private var appCoordinator: AppCoordinator?
+
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-		window = UIWindow(frame: UIScreen.main.bounds)
-		window?.makeKeyAndVisible()
-		window?.backgroundColor = .white
-
-		window?.rootViewController = ViewController()
+		let window = UIWindow(frame: UIScreen.main.bounds)
+		self.appCoordinator = AppCoordinator(window: window)
+		self.window = window
+		self.appCoordinator?.start()
+		return true
 
 		return true
 	}

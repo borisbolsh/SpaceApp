@@ -3,18 +3,21 @@ import UIKit
 final class MainContainer {
 	let input: MainModuleInput
 	let viewController: UIViewController
-	private weak var router: MainRouterInput
+	private weak var router: MainRouterInput?
 
-	func assemble(with context: MainContext) -> MainContainer {
+	static func assemble(routingHandler: MainRouterRoutingHandler,
+								moduleOutput: MainModuleOutput?) -> MainContainer {
 		let router = MainRouter()
 		let interactor = MainInteractor()
 		let presenter = MainPresenter(router: router, interactor: interactor)
 		let viewController = MainViewController(output: presenter)
 
 		presenter.view = viewController
-		presenter.moduleOutput = context.moduleOutput
+		presenter.moduleOutput = moduleOutput
 
 		interactor.output = presenter
+
+		router.routingHandler = routingHandler
 
 		return MainContainer(view: viewController, input: presenter, router: router)
 	}
@@ -24,11 +27,4 @@ final class MainContainer {
 		self.input = input
 		self.router = router
 	}
-}
-
-struct MainContext {
-	typealias ModuleDependencies = HasArticlesNetworkService
-
-	let moduleDependencies: ModuleDependencies
-	weak var moduleOutput: MainModuleOutput?
 }
