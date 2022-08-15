@@ -2,11 +2,14 @@ import UIKit
 
 final class MainCoordinator: Coordinator {
 	var childCoordinators: [Coordinator]
-	
+
+	private let appDependency: AppDependency
 	private let navigationController: UINavigationController
-	
-	init(navigationController: UINavigationController) {
+
+	init(navigationController: UINavigationController,
+			 appDependency: AppDependency) {
 		self.navigationController = navigationController
+		self.appDependency = appDependency
 		self.childCoordinators = []
 	}
 
@@ -15,11 +18,11 @@ final class MainCoordinator: Coordinator {
 	}
 
 	private func setupMain() {
-		let container = MainContainer.assemble(routingHandler: self,
+		let container = MainContainer.assemble(service: appDependency.networkService,
+																					 routingHandler: self,
 																						 moduleOutput: nil)
 
 		navigationController.setViewControllers([container.viewController], animated: false)
-
 	}
 }
 

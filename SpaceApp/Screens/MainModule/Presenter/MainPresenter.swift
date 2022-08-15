@@ -16,6 +16,12 @@ final class MainPresenter {
 extension MainPresenter: MainModuleInput {}
 
 extension MainPresenter: MainViewOutput {
-	func viewDidLoad(){}
+	func viewDidLoad(){
+		interactor.getRocketsData()
+	}
 }
-extension MainPresenter: MainInteractorOutput {}
+extension MainPresenter: MainInteractorOutput {
+	func didRecieveRockets(rockets: [Rockets]) {
+		print(rockets)
+	}
+}

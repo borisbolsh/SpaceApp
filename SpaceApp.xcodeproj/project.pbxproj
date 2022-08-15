@@ -7,11 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4534742028A591A30060460B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534741F28A591A30060460B /* Constants.swift */; };
 		4534742528A59E470060460B /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534742428A59E470060460B /* MainContainer.swift */; };
-		4534742728A5A1200060460B /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534742628A5A1200060460B /* MainProtocols.swift */; };
-		4569DE9C28A98E3D0001099A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4569DE9B28A98E3D0001099A /* AppCoordinator.swift */; };
-		4569DE9E28A990DF0001099A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4569DE9D28A990DF0001099A /* MainCoordinator.swift */; };
 		45764C0B28A2F2710004E2DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45764C0A28A2F2710004E2DF /* AppDelegate.swift */; };
 		45764C1428A2F2730004E2DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45764C1328A2F2730004E2DF /* Assets.xcassets */; };
 		45764C1728A2F2730004E2DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45764C1528A2F2730004E2DF /* LaunchScreen.storyboard */; };
@@ -19,14 +15,19 @@
 		459D4B8628A940D100DD26DD /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8528A940D100DD26DD /* MainInteractor.swift */; };
 		459D4B8928A940F300DD26DD /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8828A940F300DD26DD /* MainRouter.swift */; };
 		459D4B8C28A9414E00DD26DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8B28A9414E00DD26DD /* MainViewController.swift */; };
+		45C4800028AAA3C60003A755 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C47FFF28AAA3C60003A755 /* Constants.swift */; };
+		45C4800228AAA57F0003A755 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4800128AAA57F0003A755 /* MainProtocols.swift */; };
+		45C4800528AAA5C50003A755 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4800328AAA5C50003A755 /* MainCoordinator.swift */; };
+		45C4800628AAA5C50003A755 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4800428AAA5C50003A755 /* AppCoordinator.swift */; };
+		45C4800A28AAAC300003A755 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4800928AAAC300003A755 /* NetworkService.swift */; };
+		45C4801728AAE7D50003A755 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4801628AAE7D50003A755 /* AppDependency.swift */; };
+		45C4801D28AAE7DE0003A755 /* RocketsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4801A28AAE7DE0003A755 /* RocketsDTO.swift */; };
+		45C4801E28AAE7DE0003A755 /* LaunchesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4801B28AAE7DE0003A755 /* LaunchesDTO.swift */; };
+		45C4801F28AAE7DE0003A755 /* SpacexDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4801C28AAE7DE0003A755 /* SpacexDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4534741F28A591A30060460B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4534742428A59E470060460B /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
-		4534742628A5A1200060460B /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
-		4569DE9B28A98E3D0001099A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		4569DE9D28A990DF0001099A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		45764C0728A2F2710004E2DF /* SpaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45764C0A28A2F2710004E2DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45764C1328A2F2730004E2DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +37,15 @@
 		459D4B8528A940D100DD26DD /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		459D4B8828A940F300DD26DD /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		459D4B8B28A9414E00DD26DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		45C47FFF28AAA3C60003A755 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Helpers/Constants.swift; sourceTree = "<group>"; };
+		45C4800128AAA57F0003A755 /* MainProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainProtocols.swift; path = Protocols/MainProtocols.swift; sourceTree = "<group>"; };
+		45C4800328AAA5C50003A755 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCoordinator.swift; path = Coordinators/MainCoordinator.swift; sourceTree = "<group>"; };
+		45C4800428AAA5C50003A755 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppCoordinator.swift; path = Coordinators/AppCoordinator.swift; sourceTree = "<group>"; };
+		45C4800928AAAC300003A755 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = Services/NetworkService.swift; sourceTree = "<group>"; };
+		45C4801628AAE7D50003A755 /* AppDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
+		45C4801A28AAE7DE0003A755 /* RocketsDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketsDTO.swift; sourceTree = "<group>"; };
+		45C4801B28AAE7DE0003A755 /* LaunchesDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchesDTO.swift; sourceTree = "<group>"; };
+		45C4801C28AAE7DE0003A755 /* SpacexDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacexDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +62,7 @@
 		4534742128A596B00060460B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				4534741F28A591A30060460B /* Constants.swift */,
+				45C47FFF28AAA3C60003A755 /* Constants.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -80,8 +90,8 @@
 		4569DE9928A98DC20001099A /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				4569DE9B28A98E3D0001099A /* AppCoordinator.swift */,
-				4569DE9D28A990DF0001099A /* MainCoordinator.swift */,
+				45C4800428AAA5C50003A755 /* AppCoordinator.swift */,
+				45C4800328AAA5C50003A755 /* MainCoordinator.swift */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -89,6 +99,8 @@
 		4569DE9A28A98DFA0001099A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				45C4800928AAAC300003A755 /* NetworkService.swift */,
+				45C4801828AAE7DE0003A755 /* SpacexDataService */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -113,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				45764C1F28A2FE940004E2DF /* Application */,
+				45C4801528AAE7D50003A755 /* Dependencies */,
 				4569DE9928A98DC20001099A /* Coordinators */,
 				4569DE9A28A98DFA0001099A /* Services */,
 				45764C2028A2FEB20004E2DF /* Screens */,
@@ -160,7 +173,7 @@
 		459D4B8028A93B3600DD26DD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				4534742628A5A1200060460B /* MainProtocols.swift */,
+				45C4800128AAA57F0003A755 /* MainProtocols.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -195,6 +208,33 @@
 				459D4B8B28A9414E00DD26DD /* MainViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		45C4801528AAE7D50003A755 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				45C4801628AAE7D50003A755 /* AppDependency.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		45C4801828AAE7DE0003A755 /* SpacexDataService */ = {
+			isa = PBXGroup;
+			children = (
+				45C4801928AAE7DE0003A755 /* DTO */,
+				45C4801C28AAE7DE0003A755 /* SpacexDataService.swift */,
+			);
+			name = SpacexDataService;
+			path = Services/SpacexDataService;
+			sourceTree = "<group>";
+		};
+		45C4801928AAE7DE0003A755 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				45C4801A28AAE7DE0003A755 /* RocketsDTO.swift */,
+				45C4801B28AAE7DE0003A755 /* LaunchesDTO.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,16 +307,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C4800A28AAAC300003A755 /* NetworkService.swift in Sources */,
 				459D4B8928A940F300DD26DD /* MainRouter.swift in Sources */,
+				45C4800028AAA3C60003A755 /* Constants.swift in Sources */,
+				45C4801F28AAE7DE0003A755 /* SpacexDataService.swift in Sources */,
+				45C4800628AAA5C50003A755 /* AppCoordinator.swift in Sources */,
 				459D4B8228A93B5E00DD26DD /* MainPresenter.swift in Sources */,
 				45764C0B28A2F2710004E2DF /* AppDelegate.swift in Sources */,
+				45C4801E28AAE7DE0003A755 /* LaunchesDTO.swift in Sources */,
+				45C4801728AAE7D50003A755 /* AppDependency.swift in Sources */,
 				4534742528A59E470060460B /* MainContainer.swift in Sources */,
-				4534742728A5A1200060460B /* MainProtocols.swift in Sources */,
 				459D4B8C28A9414E00DD26DD /* MainViewController.swift in Sources */,
-				4569DE9C28A98E3D0001099A /* AppCoordinator.swift in Sources */,
 				459D4B8628A940D100DD26DD /* MainInteractor.swift in Sources */,
-				4569DE9E28A990DF0001099A /* MainCoordinator.swift in Sources */,
-				4534742028A591A30060460B /* Constants.swift in Sources */,
+				45C4800528AAA5C50003A755 /* MainCoordinator.swift in Sources */,
+				45C4800228AAA57F0003A755 /* MainProtocols.swift in Sources */,
+				45C4801D28AAE7DE0003A755 /* RocketsDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,12 +8,14 @@ protocol Coordinator: AnyObject {
 
 final class AppCoordinator: Coordinator {
 	private let window: UIWindow
+	private let appDependency: AppDependency
 	var childCoordinators: [Coordinator]
 
 	let navigationController = UINavigationController()
 
-	init(window: UIWindow) {
+	init(window: UIWindow, appDependency: AppDependency) {
 		self.window = window
+		self.appDependency = appDependency
 		self.childCoordinators = []
 	}
 
@@ -25,7 +27,8 @@ final class AppCoordinator: Coordinator {
 
 	private func showMain() {
 
-		let coordinator = MainCoordinator(navigationController: navigationController)
+		let coordinator = MainCoordinator(navigationController: navigationController,
+																			appDependency: appDependency)
 		childCoordinators = [coordinator]
 		coordinator.start()
 	}

@@ -10,9 +10,13 @@ protocol MainViewOutput: AnyObject {
 	func viewDidLoad()
 }
 
-protocol MainInteractorInput: AnyObject {}
+protocol MainInteractorInput: AnyObject {
+	func getRocketsData()
+}
 
-protocol MainInteractorOutput: AnyObject {}
+protocol MainInteractorOutput: AnyObject {
+	func didRecieveRockets(rockets: [Rockets])
+}
 
 protocol MainRouterInput: AnyObject {}
 
