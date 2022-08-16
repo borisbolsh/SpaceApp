@@ -1,11 +1,11 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
- func baseRequest<T: Decodable>(url: String, completion: @escaping (Result<T, Error>) -> Void)
+	func baseRequest<T: Decodable>(url: String, completion: @escaping (Result<T, Error>) -> Void)
 }
 
-extension	NetworkServiceProtocol {
- func baseRequest<T: Decodable>(url: String, completion: @escaping (Result<T, Error>) -> Void) {
+extension NetworkServiceProtocol {
+	func baseRequest<T: Decodable>(url: String, completion: @escaping (Result<T, Error>) -> Void) {
 	guard let url = URL(string: url) else {
 	 completion(.failure(NetworkError.wrongUrl))
 	 return
@@ -41,6 +41,6 @@ extension	NetworkServiceProtocol {
 }
 
 enum NetworkError: Error {
- case wrongUrl
- case dataIsNil
+	case wrongUrl
+	case dataIsNil
 }

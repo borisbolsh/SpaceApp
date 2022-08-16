@@ -3,8 +3,12 @@ import UIKit
 final class MainViewController: UIViewController {
 	private let output: MainViewOutput
 
+	private let collectionView: UICollectionView
+
 	init(output: MainViewOutput) {
 		self.output = output
+		let collectionViewLayout = UICollectionViewFlowLayout()
+		self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
 		super.init(nibName: nil, bundle: nil)
 	}
 
@@ -18,4 +22,9 @@ final class MainViewController: UIViewController {
 	}
 }
 
-extension MainViewController: MainViewInput {}
+extension MainViewController: MainViewInput {
+	func set(viewModels: [RocketViewModel]) {
+		self.viewModels = viewModels
+		self.collectionView.reloadData()
+	}
+}

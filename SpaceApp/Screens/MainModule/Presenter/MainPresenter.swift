@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 final class MainPresenter {
 	weak var view: MainViewInput?
@@ -15,6 +15,14 @@ final class MainPresenter {
 
 extension MainPresenter: MainModuleInput {}
 
+//MARK: Private
+
+extension MainPresenter {
+	private func showError() {
+		print("show error alert")
+	}
+}
+
 extension MainPresenter: MainViewOutput {
 	func viewDidLoad(){
 		interactor.getRocketsData()
@@ -23,5 +31,9 @@ extension MainPresenter: MainViewOutput {
 extension MainPresenter: MainInteractorOutput {
 	func didRecieveRockets(rockets: [Rockets]) {
 		print(rockets)
+	}
+
+	func didRecieveError() {
+		showError()
 	}
 }
