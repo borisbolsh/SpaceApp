@@ -3,12 +3,10 @@ import UIKit
 final class MainViewController: UIViewController {
 	private let output: MainViewOutput
 
-	private let collectionView: UICollectionView
+	private let scrollView = UIScrollView()
 
 	init(output: MainViewOutput) {
 		self.output = output
-		let collectionViewLayout = UICollectionViewFlowLayout()
-		self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
 		super.init(nibName: nil, bundle: nil)
 	}
 
@@ -17,14 +15,26 @@ final class MainViewController: UIViewController {
 	}
 
 	override func viewDidLoad() {
-		view.backgroundColor = .red
+//		view.backgroundColor = .red
 		output.viewDidLoad()
+		setupSubviews()
 	}
 }
 
-extension MainViewController: MainViewInput {
-	func set(viewModels: [RocketViewModel]) {
-		self.viewModels = viewModels
-		self.collectionView.reloadData()
+// MARK: Private
+
+extension MainViewController {
+	private func setupSubviews() {
+		
 	}
 }
+
+// MARK: View input
+
+extension MainViewController: MainViewInput {
+	func set(viewModels: [RocketViewModel]) {
+//		self.viewModels = viewModels
+//		self.collectionView.reloadData()
+	}
+}
+
