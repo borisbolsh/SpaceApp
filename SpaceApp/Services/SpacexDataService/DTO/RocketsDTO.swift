@@ -70,7 +70,7 @@ struct MassRocket: Decodable {
 struct FirstStageRocket: Decodable {
 	let engines: Int
 	let fuelAmountTons: Float
-	let burnTimeSec: Int
+	let burnTimeSec: Int?
 
 	enum CodingKeys: String, CodingKey {
 		case engines
@@ -82,7 +82,7 @@ struct FirstStageRocket: Decodable {
 struct SecondStageRocket: Decodable {
 	let engines: Int
 	let fuelAmountTons: Float
-	let burnTimeSec: Int
+	let burnTimeSec: Int?
 
 	enum CodingKeys: String, CodingKey {
 		case engines

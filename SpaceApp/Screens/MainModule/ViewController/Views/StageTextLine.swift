@@ -16,10 +16,10 @@ final class StageTextLine: UIView {
 
 extension StageTextLine {
 	private func configureUI() {
-		infoTextLabel.text = Resourses.Fonts.primaryText
+		infoTextLabel.font = Resourses.Fonts.primaryText
 
-		valueTextLabel.text = Resourses.Fonts.primaryText
+		valueTextLabel.font = Resourses.Fonts.primaryText
 
-		valueDescTextLabel.text = Resourses.Fonts.secondaryBoldText
+		valueDescTextLabel.font = Resourses.Fonts.secondaryBoldText
 	}
 }
