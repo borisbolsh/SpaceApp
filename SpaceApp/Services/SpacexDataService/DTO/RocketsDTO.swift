@@ -1,10 +1,10 @@
 import Foundation
 
 struct RocketsResponse: Decodable {
-	let rockets: [Rockets]
+	let rockets: [RocketsDTO]
 }
 
-struct Rockets: Decodable {
+struct RocketsDTO: Decodable {
 	let id: String
 	let name: String
 	let type: String

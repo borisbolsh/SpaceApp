@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		452B445228B147A60048B8F1 /* HeadingBlockRocket.xib in Resources */ = {isa = PBXBuildFile; fileRef = 452B445128B147A60048B8F1 /* HeadingBlockRocket.xib */; };
+		452B445428B147C70048B8F1 /* HeadingBlockRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452B445328B147C70048B8F1 /* HeadingBlockRocket.swift */; };
 		4534742528A59E470060460B /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534742428A59E470060460B /* MainContainer.swift */; };
+		4541316B28B12AB8001FA682 /* RocketViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4541316A28B12AB8001FA682 /* RocketViewModelMapper.swift */; };
+		4541316E28B137C1001FA682 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4541316D28B137C1001FA682 /* Kingfisher */; };
 		45764C0B28A2F2710004E2DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45764C0A28A2F2710004E2DF /* AppDelegate.swift */; };
 		45764C1428A2F2730004E2DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45764C1328A2F2730004E2DF /* Assets.xcassets */; };
 		45764C1728A2F2730004E2DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45764C1528A2F2730004E2DF /* LaunchScreen.storyboard */; };
-		4583396C28B011BC00EF800E /* UIColor+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4583396B28B011BC00EF800E /* UIColor+ext.swift */; };
+		4583396C28B011BC00EF800E /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4583396B28B011BC00EF800E /* UIColor+Ext.swift */; };
 		458EED7228AC3093003ABC7F /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458EED7128AC3093003ABC7F /* RocketViewModel.swift */; };
+		459CABF728B0CEBF001A4881 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459CABF628B0CEBF001A4881 /* UINavigationController+Ext.swift */; };
 		459D4B8228A93B5E00DD26DD /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8128A93B5E00DD26DD /* MainPresenter.swift */; };
 		459D4B8628A940D100DD26DD /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8528A940D100DD26DD /* MainInteractor.swift */; };
 		459D4B8928A940F300DD26DD /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8828A940F300DD26DD /* MainRouter.swift */; };
@@ -23,6 +28,7 @@
 		45B792B028ACA7BB00716044 /* InfoTextLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B792AF28ACA7BB00716044 /* InfoTextLine.swift */; };
 		45B792B228ACA83D00716044 /* StageTextLine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B792B128ACA83D00716044 /* StageTextLine.xib */; };
 		45B792B428ACAA0300716044 /* InfoTextLine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B792B328ACAA0300716044 /* InfoTextLine.xib */; };
+		45B915DB28B0AF200064DA50 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B915DA28B0AF200064DA50 /* UIView+Ext.swift */; };
 		45C4800028AAA3C60003A755 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C47FFF28AAA3C60003A755 /* Constants.swift */; };
 		45C4800228AAA57F0003A755 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4800128AAA57F0003A755 /* MainProtocols.swift */; };
 		45C4800528AAA5C50003A755 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4800328AAA5C50003A755 /* MainCoordinator.swift */; };
@@ -35,14 +41,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		452B445128B147A60048B8F1 /* HeadingBlockRocket.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadingBlockRocket.xib; sourceTree = "<group>"; };
+		452B445328B147C70048B8F1 /* HeadingBlockRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingBlockRocket.swift; sourceTree = "<group>"; };
 		4534742428A59E470060460B /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
+		4541316A28B12AB8001FA682 /* RocketViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModelMapper.swift; sourceTree = "<group>"; };
 		45764C0728A2F2710004E2DF /* SpaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45764C0A28A2F2710004E2DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45764C1328A2F2730004E2DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45764C1628A2F2730004E2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45764C1828A2F2730004E2DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4583396B28B011BC00EF800E /* UIColor+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ext.swift"; sourceTree = "<group>"; };
+		4583396B28B011BC00EF800E /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		458EED7128AC3093003ABC7F /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
+		459CABF628B0CEBF001A4881 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		459D4B8128A93B5E00DD26DD /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		459D4B8528A940D100DD26DD /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		459D4B8828A940F300DD26DD /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
@@ -53,6 +63,7 @@
 		45B792AF28ACA7BB00716044 /* InfoTextLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTextLine.swift; sourceTree = "<group>"; };
 		45B792B128ACA83D00716044 /* StageTextLine.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StageTextLine.xib; sourceTree = "<group>"; };
 		45B792B328ACAA0300716044 /* InfoTextLine.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTextLine.xib; sourceTree = "<group>"; };
+		45B915DA28B0AF200064DA50 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		45C47FFF28AAA3C60003A755 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Helpers/Constants.swift; sourceTree = "<group>"; };
 		45C4800128AAA57F0003A755 /* MainProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainProtocols.swift; path = Protocols/MainProtocols.swift; sourceTree = "<group>"; };
 		45C4800328AAA5C50003A755 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCoordinator.swift; path = Coordinators/MainCoordinator.swift; sourceTree = "<group>"; };
@@ -69,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4541316E28B137C1001FA682 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +98,9 @@
 		4534742228A596CD0060460B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4583396B28B011BC00EF800E /* UIColor+ext.swift */,
+				4583396B28B011BC00EF800E /* UIColor+Ext.swift */,
+				45B915DA28B0AF200064DA50 /* UIView+Ext.swift */,
+				459CABF628B0CEBF001A4881 /* UINavigationController+Ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -183,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				458EED7128AC3093003ABC7F /* RocketViewModel.swift */,
+				4541316A28B12AB8001FA682 /* RocketViewModelMapper.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -244,6 +259,8 @@
 				45B792B128ACA83D00716044 /* StageTextLine.xib */,
 				45B792AF28ACA7BB00716044 /* InfoTextLine.swift */,
 				45B792B328ACAA0300716044 /* InfoTextLine.xib */,
+				452B445128B147A60048B8F1 /* HeadingBlockRocket.xib */,
+				452B445328B147C70048B8F1 /* HeadingBlockRocket.swift */,
 				45B792A928ACA4B800716044 /* RocketInfoBlock.swift */,
 				45B792AB28ACA4D000716044 /* RocketInfoBlock.xib */,
 			);
@@ -293,6 +310,9 @@
 			dependencies = (
 			);
 			name = SpaceApp;
+			packageProductDependencies = (
+				4541316D28B137C1001FA682 /* Kingfisher */,
+			);
 			productName = SpaceApp;
 			productReference = 45764C0728A2F2710004E2DF /* SpaceApp.app */;
 			productType = "com.apple.product-type.application";
@@ -321,6 +341,9 @@
 				Base,
 			);
 			mainGroup = 45764BFE28A2F2710004E2DF;
+			packageReferences = (
+				4541316C28B137C1001FA682 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 45764C0828A2F2710004E2DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +362,7 @@
 				45764C1428A2F2730004E2DF /* Assets.xcassets in Resources */,
 				45B792AC28ACA4D000716044 /* RocketInfoBlock.xib in Resources */,
 				45B792B228ACA83D00716044 /* StageTextLine.xib in Resources */,
+				452B445228B147A60048B8F1 /* HeadingBlockRocket.xib in Resources */,
 				45B792B428ACAA0300716044 /* InfoTextLine.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459CABF728B0CEBF001A4881 /* UINavigationController+Ext.swift in Sources */,
 				45C4800A28AAAC300003A755 /* NetworkService.swift in Sources */,
 				459D4B8928A940F300DD26DD /* MainRouter.swift in Sources */,
 				45C4800028AAA3C60003A755 /* Constants.swift in Sources */,
@@ -359,16 +384,19 @@
 				458EED7228AC3093003ABC7F /* RocketViewModel.swift in Sources */,
 				45C4800628AAA5C50003A755 /* AppCoordinator.swift in Sources */,
 				459D4B8228A93B5E00DD26DD /* MainPresenter.swift in Sources */,
-				4583396C28B011BC00EF800E /* UIColor+ext.swift in Sources */,
+				4583396C28B011BC00EF800E /* UIColor+Ext.swift in Sources */,
 				45764C0B28A2F2710004E2DF /* AppDelegate.swift in Sources */,
+				45B915DB28B0AF200064DA50 /* UIView+Ext.swift in Sources */,
 				45C4801E28AAE7DE0003A755 /* LaunchesDTO.swift in Sources */,
 				45C4801728AAE7D50003A755 /* AppDependency.swift in Sources */,
 				4534742528A59E470060460B /* MainContainer.swift in Sources */,
 				459D4B8C28A9414E00DD26DD /* MainViewController.swift in Sources */,
 				459D4B8628A940D100DD26DD /* MainInteractor.swift in Sources */,
+				4541316B28B12AB8001FA682 /* RocketViewModelMapper.swift in Sources */,
 				45B792B028ACA7BB00716044 /* InfoTextLine.swift in Sources */,
 				45C4800528AAA5C50003A755 /* MainCoordinator.swift in Sources */,
 				45C4800228AAA57F0003A755 /* MainProtocols.swift in Sources */,
+				452B445428B147C70048B8F1 /* HeadingBlockRocket.swift in Sources */,
 				45C4801D28AAE7DE0003A755 /* RocketsDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +542,7 @@
 				INFOPLIST_FILE = SpaceApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -542,6 +571,7 @@
 				INFOPLIST_FILE = SpaceApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -581,6 +611,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4541316C28B137C1001FA682 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4541316D28B137C1001FA682 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4541316C28B137C1001FA682 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 45764BFF28A2F2710004E2DF /* Project object */;
 }

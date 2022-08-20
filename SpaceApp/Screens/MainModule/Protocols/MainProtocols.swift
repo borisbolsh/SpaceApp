@@ -4,7 +4,9 @@ protocol MainModuleInput {}
 
 protocol MainModuleOutput: AnyObject {}
 
-protocol MainViewInput: AnyObject {}
+protocol MainViewInput: AnyObject {
+	func set(viewModels: [RocketViewModel])
+}
 
 protocol MainViewOutput: AnyObject {
 	func viewDidLoad()
@@ -15,7 +17,7 @@ protocol MainInteractorInput: AnyObject {
 }
 
 protocol MainInteractorOutput: AnyObject {
-	func didRecieveRockets(rockets: [Rockets])
+	func didRecieveRockets(rockets: [RocketsDTO])
 }
 
 protocol MainRouterInput: AnyObject {}

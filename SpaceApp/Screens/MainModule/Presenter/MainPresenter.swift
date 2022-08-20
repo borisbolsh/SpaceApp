@@ -6,6 +6,7 @@ final class MainPresenter {
 
 	private let router: MainRouterInput
 	private let interactor: MainInteractorInput
+	private let rocketViewModelsMapper = RocketViewModelMapper()
 
 	init(router: MainRouterInput, interactor: MainInteractorInput) {
 			self.router = router
@@ -28,12 +29,20 @@ extension MainPresenter: MainViewOutput {
 		interactor.getRocketsData()
 	}
 }
+
 extension MainPresenter: MainInteractorOutput {
-	func didRecieveRockets(rockets: [Rockets]) {
-		print(rockets)
+	func didRecieveRockets(rockets: [RocketsDTO]) {
+		let viewModels = rocketViewModelsMapper.map(rocketItems: rockets)
+		view?.set(viewModels: viewModels)
 	}
 
 	func didRecieveError() {
 		showError()
+	}
+}
+
+extension MainPresenter: HeadingBlockRocketViewOutput {
+	func didTaptedSettings() {
+		// TODO: route to settings
 	}
 }

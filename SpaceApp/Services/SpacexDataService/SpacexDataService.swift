@@ -1,6 +1,6 @@
 import Foundation
 
-typealias RocketsSpacexDataServiceCompletion = ((Result<[Rockets], Error>) -> Void)
+typealias RocketsSpacexDataServiceCompletion = ((Result<[RocketsDTO], Error>) -> Void)
 
 typealias LaunchesSpacexDataServiceCompletion = ((Result<[Launches], Error>) -> Void)
 
