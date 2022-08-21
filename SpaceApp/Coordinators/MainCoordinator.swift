@@ -18,11 +18,16 @@ final class MainCoordinator: Coordinator {
 	}
 
 	private func setupMain() {
-		let container = MainContainer.assemble(service: appDependency.networkService,
-																					 routingHandler: self,
-																						 moduleOutput: nil)
+		let container = MainContainer.assemble(
+			service: appDependency.networkService,
+			routingHandler: self,
+			moduleOutput: nil
+		)
 
-		navigationController.setViewControllers([container.viewController], animated: false)
+		navigationController.setViewControllers(
+			[container.viewController],
+			animated: false
+		)
 	}
 }
 

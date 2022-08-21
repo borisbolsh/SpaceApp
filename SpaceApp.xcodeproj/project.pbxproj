@@ -7,28 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4510370528B2AC1C00C7B42D /* ButtonBlockRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510370428B2AC1C00C7B42D /* ButtonBlockRocket.swift */; };
 		452B445228B147A60048B8F1 /* HeadingBlockRocket.xib in Resources */ = {isa = PBXBuildFile; fileRef = 452B445128B147A60048B8F1 /* HeadingBlockRocket.xib */; };
 		452B445428B147C70048B8F1 /* HeadingBlockRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452B445328B147C70048B8F1 /* HeadingBlockRocket.swift */; };
+		4531AA9828B1E6040015F043 /* FeatureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531AA9728B1E6040015F043 /* FeatureItem.swift */; };
 		4534742528A59E470060460B /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534742428A59E470060460B /* MainContainer.swift */; };
 		4541316B28B12AB8001FA682 /* RocketViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4541316A28B12AB8001FA682 /* RocketViewModelMapper.swift */; };
 		4541316E28B137C1001FA682 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4541316D28B137C1001FA682 /* Kingfisher */; };
+		4570A74D28B2469600BC2E2A /* MainInfoBlockRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570A74C28B2469600BC2E2A /* MainInfoBlockRocket.swift */; };
 		45764C0B28A2F2710004E2DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45764C0A28A2F2710004E2DF /* AppDelegate.swift */; };
 		45764C1428A2F2730004E2DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45764C1328A2F2730004E2DF /* Assets.xcassets */; };
 		45764C1728A2F2730004E2DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45764C1528A2F2730004E2DF /* LaunchScreen.storyboard */; };
-		4583396C28B011BC00EF800E /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4583396B28B011BC00EF800E /* UIColor+Ext.swift */; };
 		458EED7228AC3093003ABC7F /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458EED7128AC3093003ABC7F /* RocketViewModel.swift */; };
-		459CABF728B0CEBF001A4881 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459CABF628B0CEBF001A4881 /* UINavigationController+Ext.swift */; };
 		459D4B8228A93B5E00DD26DD /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8128A93B5E00DD26DD /* MainPresenter.swift */; };
 		459D4B8628A940D100DD26DD /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8528A940D100DD26DD /* MainInteractor.swift */; };
 		459D4B8928A940F300DD26DD /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8828A940F300DD26DD /* MainRouter.swift */; };
 		459D4B8C28A9414E00DD26DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8B28A9414E00DD26DD /* MainViewController.swift */; };
-		45B792AA28ACA4B800716044 /* RocketInfoBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B792A928ACA4B800716044 /* RocketInfoBlock.swift */; };
-		45B792AC28ACA4D000716044 /* RocketInfoBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B792AB28ACA4D000716044 /* RocketInfoBlock.xib */; };
+		45B792AA28ACA4B800716044 /* StageInfoBlockRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B792A928ACA4B800716044 /* StageInfoBlockRocket.swift */; };
 		45B792AE28ACA77500716044 /* StageTextLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B792AD28ACA77500716044 /* StageTextLine.swift */; };
 		45B792B028ACA7BB00716044 /* InfoTextLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B792AF28ACA7BB00716044 /* InfoTextLine.swift */; };
 		45B792B228ACA83D00716044 /* StageTextLine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B792B128ACA83D00716044 /* StageTextLine.xib */; };
 		45B792B428ACAA0300716044 /* InfoTextLine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B792B328ACAA0300716044 /* InfoTextLine.xib */; };
-		45B915DB28B0AF200064DA50 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B915DA28B0AF200064DA50 /* UIView+Ext.swift */; };
 		45C4800028AAA3C60003A755 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C47FFF28AAA3C60003A755 /* Constants.swift */; };
 		45C4800228AAA57F0003A755 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4800128AAA57F0003A755 /* MainProtocols.swift */; };
 		45C4800528AAA5C50003A755 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4800328AAA5C50003A755 /* MainCoordinator.swift */; };
@@ -38,32 +37,36 @@
 		45C4801D28AAE7DE0003A755 /* RocketsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4801A28AAE7DE0003A755 /* RocketsDTO.swift */; };
 		45C4801E28AAE7DE0003A755 /* LaunchesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4801B28AAE7DE0003A755 /* LaunchesDTO.swift */; };
 		45C4801F28AAE7DE0003A755 /* SpacexDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4801C28AAE7DE0003A755 /* SpacexDataService.swift */; };
+		45CE23BB28B18A5F008E4454 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE23B828B18A5F008E4454 /* UINavigationController+Ext.swift */; };
+		45CE23BC28B18A5F008E4454 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE23B928B18A5F008E4454 /* UIColor+Ext.swift */; };
+		45CE23BD28B18A5F008E4454 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE23BA28B18A5F008E4454 /* UIView+Ext.swift */; };
+		45CE23C628B18B05008E4454 /* FeaturesBlockRocket.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45CE23C428B18B05008E4454 /* FeaturesBlockRocket.xib */; };
+		45CE23C728B18B05008E4454 /* FeaturesBlockRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE23C528B18B05008E4454 /* FeaturesBlockRocket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4510370428B2AC1C00C7B42D /* ButtonBlockRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBlockRocket.swift; sourceTree = "<group>"; };
 		452B445128B147A60048B8F1 /* HeadingBlockRocket.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadingBlockRocket.xib; sourceTree = "<group>"; };
 		452B445328B147C70048B8F1 /* HeadingBlockRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingBlockRocket.swift; sourceTree = "<group>"; };
+		4531AA9728B1E6040015F043 /* FeatureItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureItem.swift; sourceTree = "<group>"; };
 		4534742428A59E470060460B /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
 		4541316A28B12AB8001FA682 /* RocketViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModelMapper.swift; sourceTree = "<group>"; };
+		4570A74C28B2469600BC2E2A /* MainInfoBlockRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfoBlockRocket.swift; sourceTree = "<group>"; };
 		45764C0728A2F2710004E2DF /* SpaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45764C0A28A2F2710004E2DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45764C1328A2F2730004E2DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45764C1628A2F2730004E2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45764C1828A2F2730004E2DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4583396B28B011BC00EF800E /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		458EED7128AC3093003ABC7F /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
-		459CABF628B0CEBF001A4881 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		459D4B8128A93B5E00DD26DD /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		459D4B8528A940D100DD26DD /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		459D4B8828A940F300DD26DD /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		459D4B8B28A9414E00DD26DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		45B792A928ACA4B800716044 /* RocketInfoBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInfoBlock.swift; sourceTree = "<group>"; };
-		45B792AB28ACA4D000716044 /* RocketInfoBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RocketInfoBlock.xib; sourceTree = "<group>"; };
+		45B792A928ACA4B800716044 /* StageInfoBlockRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageInfoBlockRocket.swift; sourceTree = "<group>"; };
 		45B792AD28ACA77500716044 /* StageTextLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageTextLine.swift; sourceTree = "<group>"; };
 		45B792AF28ACA7BB00716044 /* InfoTextLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTextLine.swift; sourceTree = "<group>"; };
 		45B792B128ACA83D00716044 /* StageTextLine.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StageTextLine.xib; sourceTree = "<group>"; };
 		45B792B328ACAA0300716044 /* InfoTextLine.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTextLine.xib; sourceTree = "<group>"; };
-		45B915DA28B0AF200064DA50 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		45C47FFF28AAA3C60003A755 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Helpers/Constants.swift; sourceTree = "<group>"; };
 		45C4800128AAA57F0003A755 /* MainProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainProtocols.swift; path = Protocols/MainProtocols.swift; sourceTree = "<group>"; };
 		45C4800328AAA5C50003A755 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCoordinator.swift; path = Coordinators/MainCoordinator.swift; sourceTree = "<group>"; };
@@ -73,6 +76,11 @@
 		45C4801A28AAE7DE0003A755 /* RocketsDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketsDTO.swift; sourceTree = "<group>"; };
 		45C4801B28AAE7DE0003A755 /* LaunchesDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchesDTO.swift; sourceTree = "<group>"; };
 		45C4801C28AAE7DE0003A755 /* SpacexDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacexDataService.swift; sourceTree = "<group>"; };
+		45CE23B828B18A5F008E4454 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		45CE23B928B18A5F008E4454 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		45CE23BA28B18A5F008E4454 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		45CE23C428B18B05008E4454 /* FeaturesBlockRocket.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeaturesBlockRocket.xib; sourceTree = "<group>"; };
+		45CE23C528B18B05008E4454 /* FeaturesBlockRocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesBlockRocket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,22 +95,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4510370328B2ABC700C7B42D /* ButtonLaunchesBlockRocket */ = {
+			isa = PBXGroup;
+			children = (
+				4510370428B2AC1C00C7B42D /* ButtonBlockRocket.swift */,
+			);
+			path = ButtonLaunchesBlockRocket;
+			sourceTree = "<group>";
+		};
 		4534742128A596B00060460B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				45C47FFF28AAA3C60003A755 /* Constants.swift */,
 			);
 			name = Helpers;
-			sourceTree = "<group>";
-		};
-		4534742228A596CD0060460B /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				4583396B28B011BC00EF800E /* UIColor+Ext.swift */,
-				45B915DA28B0AF200064DA50 /* UIView+Ext.swift */,
-				459CABF628B0CEBF001A4881 /* UINavigationController+Ext.swift */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 		4534742328A59E1C0060460B /* MainModule */ = {
@@ -136,6 +142,42 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		4570A74E28B2469F00BC2E2A /* MainInfoBlockRocket */ = {
+			isa = PBXGroup;
+			children = (
+				4570A74F28B24A3C00BC2E2A /* InfoTextLine */,
+				4570A74C28B2469600BC2E2A /* MainInfoBlockRocket.swift */,
+			);
+			path = MainInfoBlockRocket;
+			sourceTree = "<group>";
+		};
+		4570A74F28B24A3C00BC2E2A /* InfoTextLine */ = {
+			isa = PBXGroup;
+			children = (
+				45B792AF28ACA7BB00716044 /* InfoTextLine.swift */,
+				45B792B328ACAA0300716044 /* InfoTextLine.xib */,
+			);
+			path = InfoTextLine;
+			sourceTree = "<group>";
+		};
+		4570A75028B24D7400BC2E2A /* StageTextLine */ = {
+			isa = PBXGroup;
+			children = (
+				45B792AD28ACA77500716044 /* StageTextLine.swift */,
+				45B792B128ACA83D00716044 /* StageTextLine.xib */,
+			);
+			path = StageTextLine;
+			sourceTree = "<group>";
+		};
+		4570A75128B2692700BC2E2A /* StageInfoBlockRocket */ = {
+			isa = PBXGroup;
+			children = (
+				4570A75028B24D7400BC2E2A /* StageTextLine */,
+				45B792A928ACA4B800716044 /* StageInfoBlockRocket.swift */,
+			);
+			name = StageInfoBlockRocket;
+			sourceTree = "<group>";
+		};
 		45764BFE28A2F2710004E2DF = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +202,7 @@
 				4569DE9928A98DC20001099A /* Coordinators */,
 				4569DE9A28A98DFA0001099A /* Services */,
 				45764C2028A2FEB20004E2DF /* Screens */,
-				4534742228A596CD0060460B /* Extensions */,
+				45CE23B728B18A5F008E4454 /* Extensions */,
 				4534742128A596B00060460B /* Helpers */,
 				45764C1E28A2FE760004E2DF /* Resources */,
 			);
@@ -221,6 +263,7 @@
 		459D4B8328A93B6600DD26DD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				458EED7028AC3060003ABC7F /* ViewModels */,
 				459D4B8128A93B5E00DD26DD /* MainPresenter.swift */,
 			);
 			path = Presenter;
@@ -247,7 +290,6 @@
 			children = (
 				459D4B8B28A9414E00DD26DD /* MainViewController.swift */,
 				45B792A828ACA3B500716044 /* Views */,
-				458EED7028AC3060003ABC7F /* ViewModels */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -255,14 +297,11 @@
 		45B792A828ACA3B500716044 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				45B792AD28ACA77500716044 /* StageTextLine.swift */,
-				45B792B128ACA83D00716044 /* StageTextLine.xib */,
-				45B792AF28ACA7BB00716044 /* InfoTextLine.swift */,
-				45B792B328ACAA0300716044 /* InfoTextLine.xib */,
-				452B445128B147A60048B8F1 /* HeadingBlockRocket.xib */,
-				452B445328B147C70048B8F1 /* HeadingBlockRocket.swift */,
-				45B792A928ACA4B800716044 /* RocketInfoBlock.swift */,
-				45B792AB28ACA4D000716044 /* RocketInfoBlock.xib */,
+				45CE23B628B18A1F008E4454 /* HeadingBlockRocket */,
+				45CE23C328B18B05008E4454 /* FeaturesBlockRocket */,
+				4570A74E28B2469F00BC2E2A /* MainInfoBlockRocket */,
+				4570A75128B2692700BC2E2A /* StageInfoBlockRocket */,
+				4510370328B2ABC700C7B42D /* ButtonLaunchesBlockRocket */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -292,6 +331,35 @@
 				45C4801B28AAE7DE0003A755 /* LaunchesDTO.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		45CE23B628B18A1F008E4454 /* HeadingBlockRocket */ = {
+			isa = PBXGroup;
+			children = (
+				452B445128B147A60048B8F1 /* HeadingBlockRocket.xib */,
+				452B445328B147C70048B8F1 /* HeadingBlockRocket.swift */,
+			);
+			path = HeadingBlockRocket;
+			sourceTree = "<group>";
+		};
+		45CE23B728B18A5F008E4454 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				45CE23B828B18A5F008E4454 /* UINavigationController+Ext.swift */,
+				45CE23B928B18A5F008E4454 /* UIColor+Ext.swift */,
+				45CE23BA28B18A5F008E4454 /* UIView+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		45CE23C328B18B05008E4454 /* FeaturesBlockRocket */ = {
+			isa = PBXGroup;
+			children = (
+				45CE23C428B18B05008E4454 /* FeaturesBlockRocket.xib */,
+				45CE23C528B18B05008E4454 /* FeaturesBlockRocket.swift */,
+				4531AA9728B1E6040015F043 /* FeatureItem.swift */,
+			);
+			path = FeaturesBlockRocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,8 +427,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				45764C1728A2F2730004E2DF /* LaunchScreen.storyboard in Resources */,
+				45CE23C628B18B05008E4454 /* FeaturesBlockRocket.xib in Resources */,
 				45764C1428A2F2730004E2DF /* Assets.xcassets in Resources */,
-				45B792AC28ACA4D000716044 /* RocketInfoBlock.xib in Resources */,
 				45B792B228ACA83D00716044 /* StageTextLine.xib in Resources */,
 				452B445228B147A60048B8F1 /* HeadingBlockRocket.xib in Resources */,
 				45B792B428ACAA0300716044 /* InfoTextLine.xib in Resources */,
@@ -374,25 +442,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				459CABF728B0CEBF001A4881 /* UINavigationController+Ext.swift in Sources */,
+				45CE23BB28B18A5F008E4454 /* UINavigationController+Ext.swift in Sources */,
+				4531AA9828B1E6040015F043 /* FeatureItem.swift in Sources */,
 				45C4800A28AAAC300003A755 /* NetworkService.swift in Sources */,
 				459D4B8928A940F300DD26DD /* MainRouter.swift in Sources */,
 				45C4800028AAA3C60003A755 /* Constants.swift in Sources */,
 				45B792AE28ACA77500716044 /* StageTextLine.swift in Sources */,
-				45B792AA28ACA4B800716044 /* RocketInfoBlock.swift in Sources */,
+				45B792AA28ACA4B800716044 /* StageInfoBlockRocket.swift in Sources */,
 				45C4801F28AAE7DE0003A755 /* SpacexDataService.swift in Sources */,
 				458EED7228AC3093003ABC7F /* RocketViewModel.swift in Sources */,
+				45CE23BD28B18A5F008E4454 /* UIView+Ext.swift in Sources */,
 				45C4800628AAA5C50003A755 /* AppCoordinator.swift in Sources */,
+				4570A74D28B2469600BC2E2A /* MainInfoBlockRocket.swift in Sources */,
 				459D4B8228A93B5E00DD26DD /* MainPresenter.swift in Sources */,
-				4583396C28B011BC00EF800E /* UIColor+Ext.swift in Sources */,
+				45CE23BC28B18A5F008E4454 /* UIColor+Ext.swift in Sources */,
 				45764C0B28A2F2710004E2DF /* AppDelegate.swift in Sources */,
-				45B915DB28B0AF200064DA50 /* UIView+Ext.swift in Sources */,
 				45C4801E28AAE7DE0003A755 /* LaunchesDTO.swift in Sources */,
 				45C4801728AAE7D50003A755 /* AppDependency.swift in Sources */,
+				4510370528B2AC1C00C7B42D /* ButtonBlockRocket.swift in Sources */,
 				4534742528A59E470060460B /* MainContainer.swift in Sources */,
 				459D4B8C28A9414E00DD26DD /* MainViewController.swift in Sources */,
 				459D4B8628A940D100DD26DD /* MainInteractor.swift in Sources */,
 				4541316B28B12AB8001FA682 /* RocketViewModelMapper.swift in Sources */,
+				45CE23C728B18B05008E4454 /* FeaturesBlockRocket.swift in Sources */,
 				45B792B028ACA7BB00716044 /* InfoTextLine.swift in Sources */,
 				45C4800528AAA5C50003A755 /* MainCoordinator.swift in Sources */,
 				45C4800228AAA57F0003A755 /* MainProtocols.swift in Sources */,
@@ -538,6 +610,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88GGD7677D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpaceApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -567,6 +640,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88GGD7677D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpaceApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

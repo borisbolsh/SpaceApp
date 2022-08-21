@@ -42,7 +42,14 @@ extension MainPresenter: MainInteractorOutput {
 }
 
 extension MainPresenter: HeadingBlockRocketViewOutput {
-	func didTaptedSettings() {
+	func didTapOnSettings() {
 		// TODO: route to settings
+	}
+}
+
+extension MainPresenter: ButtonLaunchesBlockRocketViewOutput {
+	func didTapOnShowLaunches(idRocket: String) {
+		// TODO: route to launches
+		print(idRocket)
 	}
 }

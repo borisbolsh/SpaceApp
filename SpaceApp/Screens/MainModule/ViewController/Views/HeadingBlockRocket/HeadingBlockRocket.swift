@@ -8,11 +8,11 @@ protocol HeadingBlockRocketViewInput {
 }
 
 protocol HeadingBlockRocketViewOutput: AnyObject {
-	func didTaptedSettings()
+	func didTapOnSettings()
 }
 
 final class HeadingBlockRocket: UIView {
-	var output: HeadingBlockRocketViewOutput?
+	weak var output: HeadingBlockRocketViewOutput?
 
 	@IBOutlet private var titleLabel: UILabel!
 	@IBOutlet private var settingsImageView: UIImageView!
@@ -24,16 +24,6 @@ final class HeadingBlockRocket: UIView {
 		super.awakeFromNib()
 
 		configureUI()
-	}
-
-	func setup(
-		title: String,
-		output: HeadingBlockRocketViewOutput?
-	) {
-		titleLabel.text = title
-		self.output = output
-
-		layoutIfNeeded()
 	}
 }
 
@@ -47,8 +37,27 @@ extension HeadingBlockRocket {
 
 		settingsBtn.addTarget(self, action: #selector(didTapOnSettingsBtn), for: .touchUpInside)
 	}
+}
 
-	@objc func didTapOnSettingsBtn() {
-		output?.didTaptedSettings()
+// MARK: View Input
+
+extension HeadingBlockRocket: HeadingBlockRocketViewInput {
+	func setup(
+		title: String,
+		output: HeadingBlockRocketViewOutput?
+	) {
+		titleLabel.text = title
+		self.output = output
+
+		layoutIfNeeded()
 	}
+}
+
+// MARK: Actions
+
+extension HeadingBlockRocket {
+	@objc func didTapOnSettingsBtn() {
+		 print("Settings tapped")
+		 output?.didTapOnSettings()
+	 }
 }

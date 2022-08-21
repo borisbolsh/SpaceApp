@@ -27,8 +27,10 @@ final class AppCoordinator: Coordinator {
 
 	private func showMain() {
 
-		let coordinator = MainCoordinator(navigationController: navigationController,
-																			appDependency: appDependency)
+		let coordinator = MainCoordinator(
+			navigationController: navigationController,
+			appDependency: appDependency
+		)
 		childCoordinators = [coordinator]
 		coordinator.start()
 	}
