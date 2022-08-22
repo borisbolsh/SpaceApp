@@ -15,6 +15,10 @@ enum Resourses {
 		static let secondaryText = UIColor(hexString: "#8E8E8F")
 		static let infoText = UIColor(hexString: "#CACACA")
 		static let lightText = UIColor(hexString: "#FFFFFF")
+
+		/// Control colors
+		static let activeControl = UIColor(hexString: "#FFFFFF")
+		static let secondControl = UIColor(hexString: "#8E8E8F")
 	}
 
 	enum Images {

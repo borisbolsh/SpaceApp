@@ -49,6 +49,8 @@ final class MainViewController: UIViewController {
 	private let output: MainViewOutput
 
 	private let scrollView = UIScrollView()
+	private let pageControl = UIPageControl()
+	private let pageControlView = UIView()
 	private let contentView = UIView()
 	private let imageRocket = UIImageView()
 	private let contentBlockView = UIView()
@@ -112,6 +114,8 @@ final class MainViewController: UIViewController {
 extension MainViewController {
 	private func setupSubviews() {
 		view.addSubview(scrollView)
+		view.addSubview(pageControlView)
+		pageControlView.addSubview(pageControl)
 		scrollView.addSubview(contentView)
 		contentView.addSubview(imageRocket)
 		imageRocket.addSubview(contentTopBlockView)
@@ -130,6 +134,8 @@ extension MainViewController {
 
 	private func setupUI() {
 		scrollView.translatesAutoresizingMaskIntoConstraints = false
+		pageControlView.translatesAutoresizingMaskIntoConstraints = false
+		pageControl.translatesAutoresizingMaskIntoConstraints = false
 		contentView.translatesAutoresizingMaskIntoConstraints = false
 		imageRocket.translatesAutoresizingMaskIntoConstraints = false
 		placeholderImage.translatesAutoresizingMaskIntoConstraints = false
@@ -143,6 +149,14 @@ extension MainViewController {
 		launchesButtonBlock.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate ([
+			pageControlView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+			pageControlView.leftAnchor.constraint(equalTo: view.leftAnchor),
+			pageControlView.rightAnchor.constraint(equalTo: view.rightAnchor),
+			pageControlView.heightAnchor.constraint(equalToConstant: 75),
+
+			pageControl.topAnchor.constraint(equalTo: pageControlView.topAnchor, constant: 10),
+			pageControl.centerXAnchor.constraint(equalTo: pageControlView.centerXAnchor),
+
 			scrollView.topAnchor.constraint(equalTo: view.topAnchor),
 			scrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
 			scrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
@@ -213,6 +227,10 @@ extension MainViewController {
 	private func configurateUI() {
 		scrollView.contentInsetAdjustmentBehavior = .never
 
+		pageControlView.backgroundColor = Resourses.Colors.secondaryBackground
+		pageControl.pageIndicatorTintColor = Resourses.Colors.secondControl
+		pageControl.currentPageIndicatorTintColor = Resourses.Colors.activeControl
+
 		view.backgroundColor = Resourses.Colors.primaryBackground
 		contentView.backgroundColor = .white
 		contentBlockView.backgroundColor = .black
@@ -255,6 +273,8 @@ extension MainViewController {
 extension MainViewController: MainViewInput {
 	func set(viewModels: [RocketViewModel]) {
 		self.viewModels = viewModels
+		self.pageControl.numberOfPages = viewModels.count
+		self.pageControl.currentPage = numberRocketToShow
 		updateUI()
 	}
 }
