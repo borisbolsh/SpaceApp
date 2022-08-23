@@ -71,6 +71,8 @@ extension FeaturesBlockRocket {
 			return
 		}
 
+		stackView.removeFullyAllArrangedSubviews()
+
 		viewModels.forEach { item in
 			let newItem = FeatureItem()
 			newItem.update(title: item.title, subtitle: item.subtitle)

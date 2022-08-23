@@ -5,8 +5,7 @@ final class RocketViewModelMapper {
 		let results = rocketItems.map {
 			RocketViewModel(
 				id: $0.id,
-				info: $0.name,
-				title: $0.company,
+				title: $0.name,
 				shortDescription: $0.description,
 				imageName: ($0.images.first ?? "") ?? "",
 				features: [

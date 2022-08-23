@@ -28,6 +28,14 @@ extension MainPresenter: MainViewOutput {
 	func viewDidLoad(){
 		interactor.getRocketsData()
 	}
+
+	func didSwipeLeft() {
+		view?.showNextRocket()
+	}
+
+	func didSwipeRight() {
+		view?.showPreviousRocket()
+	}
 }
 
 extension MainPresenter: MainInteractorOutput {

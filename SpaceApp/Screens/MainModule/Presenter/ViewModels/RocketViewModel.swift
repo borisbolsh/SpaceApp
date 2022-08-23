@@ -2,7 +2,6 @@ import Foundation
 
 struct RocketViewModel {
 	let id: String
-	let info: String
 	let title: String
 	let shortDescription: String
 	let imageName: String

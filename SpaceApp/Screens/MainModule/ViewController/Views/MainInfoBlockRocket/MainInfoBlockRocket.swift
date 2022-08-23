@@ -71,6 +71,8 @@ extension MainInfoBlockRocket {
 			return
 		}
 
+		stackView.removeFullyAllArrangedSubviews()
+
 		viewModels.forEach { item in
 			let newItem = InfoTextLine.loadFromNib()
 			newItem.update(title: item.info, value: item.value)

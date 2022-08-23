@@ -24,25 +24,30 @@ final class MainViewController: UIViewController {
 		}
 
 		enum TitleBlock {
-			static let height:CGFloat = 60
+			static let height: CGFloat = 60
 		}
 
 		enum MainInfoBlock{
-			static let minHeight:CGFloat = 160
+			static let minHeight: CGFloat = 160
 		}
 
 		enum StageBlock {
 			static let insetLeft: CGFloat = 32
 			static let insetRight: CGFloat = -32
-			static let minHeight:CGFloat = 186
+			static let minHeight: CGFloat = 186
 		}
 
 		enum LaunchesButton {
 			static let insetTop: CGFloat = 12
 			static let insetLeft: CGFloat = 32
 			static let insetRight: CGFloat = -32
-			static let insetBottom: CGFloat = -32
-			static let height:CGFloat = 72
+			static let insetBottom: CGFloat = -92
+			static let height: CGFloat = 72
+		}
+
+		enum PageControl {
+			static let heightContainer: CGFloat = 50
+			static let topInsetToControls: CGFloat = 10
 		}
 	}
 
@@ -85,6 +90,14 @@ final class MainViewController: UIViewController {
 
 		output.viewDidLoad()
 		setupSubviews()
+
+	 let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+	 swipeLeft.direction = .left
+	 self.view.addGestureRecognizer(swipeLeft)
+
+	 let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+	 swipeRight.direction = .right
+	 self.view.addGestureRecognizer(swipeRight)
 	}
 
 	override func viewWillDisappear(_ animated: Bool) {
@@ -94,7 +107,7 @@ final class MainViewController: UIViewController {
 
 	override func viewDidLayoutSubviews() {
 		if isFirstLoading {
-			imageHeight = view.layer.frame.height / 2
+			imageHeight = view.layer.frame.height / 2.2
 			imageHeightRocketConstraint?.isActive = false
 			imageHeightRocketConstraint =
 						imageRocket.heightAnchor.constraint(equalToConstant: imageHeight)
@@ -152,9 +165,9 @@ extension MainViewController {
 			pageControlView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 			pageControlView.leftAnchor.constraint(equalTo: view.leftAnchor),
 			pageControlView.rightAnchor.constraint(equalTo: view.rightAnchor),
-			pageControlView.heightAnchor.constraint(equalToConstant: 75),
+			pageControlView.heightAnchor.constraint(equalToConstant: Constants.PageControl.heightContainer),
 
-			pageControl.topAnchor.constraint(equalTo: pageControlView.topAnchor, constant: 10),
+			pageControl.topAnchor.constraint(equalTo: pageControlView.topAnchor, constant: Constants.PageControl.topInsetToControls),
 			pageControl.centerXAnchor.constraint(equalTo: pageControlView.centerXAnchor),
 
 			scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -247,11 +260,9 @@ extension MainViewController {
 		imageRocket.backgroundColor = Resourses.Colors.secondaryBackground
 	}
 
-	/// Update UI
-	/// after get viewmodel from presenter
-
 	private func updateUI() {
 		placeholderImage.isHidden = true
+		imageRocket.image = nil
 		imageRocket.kf.setImage(with: URL(string: viewModels[numberRocketToShow].imageName))
 
 		titleBlock.setup(title: viewModels[numberRocketToShow].title,
@@ -276,5 +287,35 @@ extension MainViewController: MainViewInput {
 		self.pageControl.numberOfPages = viewModels.count
 		self.pageControl.currentPage = numberRocketToShow
 		updateUI()
+	}
+
+	func showPreviousRocket() {
+		guard numberRocketToShow != 0 else {
+			return
+		}
+		numberRocketToShow -= 1
+		pageControl.currentPage = numberRocketToShow
+		updateUI()
+	}
+
+	func showNextRocket() {
+		guard numberRocketToShow != (viewModels.count - 1) else {
+			return
+		}
+		numberRocketToShow += 1
+		pageControl.currentPage = numberRocketToShow
+		updateUI()
+	}
+}
+
+// MARK: Actions
+
+extension MainViewController {
+	@objc private func handleGesture(gesture: UISwipeGestureRecognizer) {
+		if gesture.direction == .right {
+			output.didSwipeRight()
+		} else if gesture.direction == .left {
+			output.didSwipeLeft()
+		}
 	}
 }

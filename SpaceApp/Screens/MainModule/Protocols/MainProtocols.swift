@@ -6,10 +6,14 @@ protocol MainModuleOutput: AnyObject {}
 
 protocol MainViewInput: AnyObject {
 	func set(viewModels: [RocketViewModel])
+	func showPreviousRocket()
+	func showNextRocket()
 }
 
 protocol MainViewOutput: AnyObject {
 	func viewDidLoad()
+	func didSwipeRight()
+	func didSwipeLeft()
 }
 
 protocol MainInteractorInput: AnyObject {

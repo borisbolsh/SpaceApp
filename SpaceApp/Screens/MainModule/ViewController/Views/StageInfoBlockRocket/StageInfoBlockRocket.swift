@@ -87,6 +87,8 @@ extension StageInfoBlockRocket {
 			return
 		}
 
+		stackView.removeFullyAllArrangedSubviews()
+		
 		viewModels.forEach { item in
 			let newItem = StageTextLine.loadFromNib()
 

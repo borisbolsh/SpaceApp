@@ -47,7 +47,10 @@ extension HeadingBlockRocket: HeadingBlockRocketViewInput {
 		output: HeadingBlockRocketViewOutput?
 	) {
 		titleLabel.text = title
-		self.output = output
+
+		if output == nil {
+			self.output = output
+		}
 
 		layoutIfNeeded()
 	}
