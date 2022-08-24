@@ -24,6 +24,10 @@ protocol MainInteractorOutput: AnyObject {
 	func didRecieveRockets(rockets: [RocketsDTO])
 }
 
-protocol MainRouterInput: AnyObject {}
+protocol MainRouterInput: AnyObject {
+	func routeToDetails()
+}
 
-protocol MainRouterRoutingHandler: AnyObject {}
+protocol MainRouterRoutingHandler: AnyObject {
+	func performRouteToDetails()
+}

@@ -24,10 +24,13 @@ enum Resourses {
 	enum Images {
 		static let settings = UIImage(named: "settings-icon")
 		static let rocket = UIImage(named: "rocket-icon")
+		static let launchOk = UIImage(named: "launch-ok")
+		static let launchCencel = UIImage(named: "launch-cencel")
 	}
 
 	enum Fonts {
 		static let sectionTitle = UIFont.systemFont(ofSize: 24.0)
+		static let detailsLaunchesTitle = UIFont.systemFont(ofSize: 20.0)
 		static let primaryText = UIFont.systemFont(ofSize: 16.0)
 		static let secondaryBoldText = UIFont.boldSystemFont(ofSize: 16.0)
 		static let secondaryInfoText = UIFont.systemFont(ofSize: 14.0)

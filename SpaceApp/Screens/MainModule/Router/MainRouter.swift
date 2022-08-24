@@ -5,9 +5,7 @@ final class MainRouter {
 }
 
 extension MainRouter: MainRouterInput {
-
-}
-
-extension MainRouter: MainRouterRoutingHandler {
-
+	func routeToDetails() {
+		routingHandler?.performRouteToDetails()
+	}
 }

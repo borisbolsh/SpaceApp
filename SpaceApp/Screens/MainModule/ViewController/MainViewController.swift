@@ -46,7 +46,7 @@ final class MainViewController: UIViewController {
 		}
 
 		enum PageControl {
-			static let heightContainer: CGFloat = 50
+			static let heightContainer: CGFloat = 75
 			static let topInsetToControls: CGFloat = 10
 		}
 	}
@@ -91,13 +91,13 @@ final class MainViewController: UIViewController {
 		output.viewDidLoad()
 		setupSubviews()
 
-	 let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-	 swipeLeft.direction = .left
-	 self.view.addGestureRecognizer(swipeLeft)
+		let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+		swipeLeft.direction = .left
+		self.view.addGestureRecognizer(swipeLeft)
 
-	 let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-	 swipeRight.direction = .right
-	 self.view.addGestureRecognizer(swipeRight)
+		let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+		swipeRight.direction = .right
+		self.view.addGestureRecognizer(swipeRight)
 	}
 
 	override func viewWillDisappear(_ animated: Bool) {

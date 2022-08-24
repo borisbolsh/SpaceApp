@@ -43,6 +43,13 @@
 		45CE23BD28B18A5F008E4454 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE23BA28B18A5F008E4454 /* UIView+Ext.swift */; };
 		45CE23C628B18B05008E4454 /* FeaturesBlockRocket.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45CE23C428B18B05008E4454 /* FeaturesBlockRocket.xib */; };
 		45CE23C728B18B05008E4454 /* FeaturesBlockRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE23C528B18B05008E4454 /* FeaturesBlockRocket.swift */; };
+		45D06DD928B686B4005B6C23 /* DetailsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DD828B686B4005B6C23 /* DetailsContainer.swift */; };
+		45D06DDB28B6871C005B6C23 /* DetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DDA28B6871C005B6C23 /* DetailsProtocols.swift */; };
+		45D06DDD28B68780005B6C23 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DDC28B68780005B6C23 /* DetailsViewController.swift */; };
+		45D06DDF28B6898A005B6C23 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DDE28B6898A005B6C23 /* DetailsPresenter.swift */; };
+		45D06DE228B68A37005B6C23 /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DE128B68A37005B6C23 /* DetailsRouter.swift */; };
+		45D06DE428B68A72005B6C23 /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DE328B68A72005B6C23 /* DetailsInteractor.swift */; };
+		45E2F07328B69CE5007A45A3 /* DetailsLaunchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E2F07228B69CE5007A45A3 /* DetailsLaunchesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +90,13 @@
 		45CE23BA28B18A5F008E4454 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		45CE23C428B18B05008E4454 /* FeaturesBlockRocket.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeaturesBlockRocket.xib; sourceTree = "<group>"; };
 		45CE23C528B18B05008E4454 /* FeaturesBlockRocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesBlockRocket.swift; sourceTree = "<group>"; };
+		45D06DD828B686B4005B6C23 /* DetailsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsContainer.swift; sourceTree = "<group>"; };
+		45D06DDA28B6871C005B6C23 /* DetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsProtocols.swift; sourceTree = "<group>"; };
+		45D06DDC28B68780005B6C23 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		45D06DDE28B6898A005B6C23 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
+		45D06DE128B68A37005B6C23 /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
+		45D06DE328B68A72005B6C23 /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
+		45E2F07228B69CE5007A45A3 /* DetailsLaunchesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsLaunchesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +247,7 @@
 		45764C2028A2FEB20004E2DF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				45D06DD128B68545005B6C23 /* DetailsModule */,
 				4534742328A59E1C0060460B /* MainModule */,
 			);
 			path = Screens;
@@ -366,6 +381,76 @@
 			path = FeaturesBlockRocket;
 			sourceTree = "<group>";
 		};
+		45D06DD128B68545005B6C23 /* DetailsModule */ = {
+			isa = PBXGroup;
+			children = (
+				45D06DD728B6858A005B6C23 /* Interactor */,
+				45D06DD628B68584005B6C23 /* Router */,
+				45D06DD528B6857E005B6C23 /* Presenter */,
+				45D06DD428B68579005B6C23 /* ViewController */,
+				45D06DD328B68573005B6C23 /* Protocols */,
+				45D06DD228B6855E005B6C23 /* Container */,
+			);
+			path = DetailsModule;
+			sourceTree = "<group>";
+		};
+		45D06DD228B6855E005B6C23 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				45D06DD828B686B4005B6C23 /* DetailsContainer.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		45D06DD328B68573005B6C23 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				45D06DDA28B6871C005B6C23 /* DetailsProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		45D06DD428B68579005B6C23 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45D06DDC28B68780005B6C23 /* DetailsViewController.swift */,
+				45E2F07128B69C7E007A45A3 /* Cells */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		45D06DD528B6857E005B6C23 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				45D06DDE28B6898A005B6C23 /* DetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		45D06DD628B68584005B6C23 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				45D06DE128B68A37005B6C23 /* DetailsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		45D06DD728B6858A005B6C23 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				45D06DE328B68A72005B6C23 /* DetailsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		45E2F07128B69C7E007A45A3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				45E2F07228B69CE5007A45A3 /* DetailsLaunchesCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -451,6 +536,7 @@
 				45C4800A28AAAC300003A755 /* NetworkService.swift in Sources */,
 				459D4B8928A940F300DD26DD /* MainRouter.swift in Sources */,
 				45C4800028AAA3C60003A755 /* Constants.swift in Sources */,
+				45D06DDF28B6898A005B6C23 /* DetailsPresenter.swift in Sources */,
 				45C4801F28AAE7DE0003A755 /* SpacexDataService.swift in Sources */,
 				458EED7228AC3093003ABC7F /* RocketViewModel.swift in Sources */,
 				45CE23BD28B18A5F008E4454 /* UIView+Ext.swift in Sources */,
@@ -460,6 +546,7 @@
 				459D4B8228A93B5E00DD26DD /* MainPresenter.swift in Sources */,
 				45CE23BC28B18A5F008E4454 /* UIColor+Ext.swift in Sources */,
 				45764C0B28A2F2710004E2DF /* AppDelegate.swift in Sources */,
+				45D06DE428B68A72005B6C23 /* DetailsInteractor.swift in Sources */,
 				45C4801E28AAE7DE0003A755 /* LaunchesDTO.swift in Sources */,
 				45C4801728AAE7D50003A755 /* AppDependency.swift in Sources */,
 				4510370528B2AC1C00C7B42D /* ButtonBlockRocket.swift in Sources */,
@@ -468,11 +555,16 @@
 				459D4B8C28A9414E00DD26DD /* MainViewController.swift in Sources */,
 				454A378128B418D20056967A /* StageTextLine.swift in Sources */,
 				459D4B8628A940D100DD26DD /* MainInteractor.swift in Sources */,
+				45D06DD928B686B4005B6C23 /* DetailsContainer.swift in Sources */,
 				4541316B28B12AB8001FA682 /* RocketViewModelMapper.swift in Sources */,
 				45CE23C728B18B05008E4454 /* FeaturesBlockRocket.swift in Sources */,
 				45B792B028ACA7BB00716044 /* InfoTextLine.swift in Sources */,
 				45C4800528AAA5C50003A755 /* MainCoordinator.swift in Sources */,
+				45D06DDD28B68780005B6C23 /* DetailsViewController.swift in Sources */,
+				45D06DE228B68A37005B6C23 /* DetailsRouter.swift in Sources */,
+				45D06DDB28B6871C005B6C23 /* DetailsProtocols.swift in Sources */,
 				45C4800228AAA57F0003A755 /* MainProtocols.swift in Sources */,
+				45E2F07328B69CE5007A45A3 /* DetailsLaunchesCell.swift in Sources */,
 				452B445428B147C70048B8F1 /* HeadingBlockRocket.swift in Sources */,
 				45C4801D28AAE7DE0003A755 /* RocketsDTO.swift in Sources */,
 			);

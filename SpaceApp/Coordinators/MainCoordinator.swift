@@ -29,6 +29,24 @@ final class MainCoordinator: Coordinator {
 			animated: false
 		)
 	}
+
+	private func detailsModule() {
+		let container = DetailsContainer.assemble(
+			service: appDependency.networkService,
+			routingHandler: self,
+			moduleOutput: nil
+		)
+
+		navigationController.dismiss(animated: true) { [weak self] in
+			self?.navigationController.pushViewController(container.viewController, animated: true)
+		}
+	}
 }
 
-extension MainCoordinator: MainRouterRoutingHandler {}
+extension MainCoordinator: MainRouterRoutingHandler {
+	func performRouteToDetails() {
+		detailsModule()
+	}
+}
+
+extension MainCoordinator: DetailsRouterRoutingHandler {}
