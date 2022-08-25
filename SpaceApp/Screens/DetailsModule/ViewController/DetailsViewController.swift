@@ -40,7 +40,7 @@ extension DetailsViewController: DetailsViewInput {
 extension DetailsViewController {
 	private func setupSubviews() {
 		tableView.frame = view.bounds
-		tableView.delegate = self
+//		tableView.delegate = self
 		tableView.dataSource = self
 
 		tableView.register(DetailsLaunchesCell.self, forCellReuseIdentifier: String(describing: DetailsLaunchesCell.self))
@@ -83,7 +83,7 @@ extension DetailsViewController: UITableViewDataSource {
 
 // MARK: TableViewDelegate
 
-extension DetailsViewController: UITableViewDelegate {
-
-}
-
+//extension DetailsViewController: UITableViewDelegate {
+//
+//}
+//

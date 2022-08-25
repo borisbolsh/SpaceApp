@@ -57,9 +57,9 @@ final class DetailsLaunchesCell: UITableViewCell {
 			titleLabel.topAnchor.constraint(equalTo: launchView.topAnchor, constant: 24),
 			titleLabel.leftAnchor.constraint(equalTo: launchView.leftAnchor, constant: 24),
 
-			dateLabel.topAnchor.constraint(equalTo: launchView.bottomAnchor),
+			dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
 			dateLabel.leftAnchor.constraint(equalTo: launchView.leftAnchor, constant: 24),
-			dateLabel.bottomAnchor.constraint(equalTo: launchView.bottomAnchor, constant: -24),
+			dateLabel.bottomAnchor.constraint(equalTo: launchView.bottomAnchor, constant: -20),
 
 			statusImageView.centerYAnchor.constraint(equalTo: launchView.centerYAnchor),
 			statusImageView.rightAnchor.constraint(equalTo: launchView.rightAnchor, constant: -24),
@@ -76,15 +76,21 @@ final class DetailsLaunchesCell: UITableViewCell {
 
 		launchView.layer.cornerRadius = 20
 
-		titleLabel.tintColor = Resourses.Colors.lightText
-		dateLabel.tintColor = Resourses.Colors.secondaryText
+		titleLabel.font = Resourses.Fonts.detailsLaunchesTitle
+		titleLabel.textColor = Resourses.Colors.lightText
+		dateLabel.textColor = Resourses.Colors.secondaryText
+
 	}
 }
 
 extension DetailsLaunchesCell: DetailsLaunchesCellViewInput {
 	func configure(model: LaunchViewModel) {
 		titleLabel.text = model.nameLaunch
-		dateLabel.text = model.dateLaunch
+		let date = Date(timeIntervalSince1970: model.dateLaunch)
+
+		dateLabel.text = DateFormatter.launchDateTimeFormatter.string(from: date)
 		statusImageView.image = model.isSuccess ? Resourses.Images.launchOk : Resourses.Images.launchCencel
+
+		layoutIfNeeded()
 	}
 }

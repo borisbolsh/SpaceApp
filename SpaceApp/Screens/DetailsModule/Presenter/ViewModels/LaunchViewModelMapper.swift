@@ -6,7 +6,7 @@ final class LaunchViewModelMapper {
 			LaunchViewModel(
 				idRocket: $0.rocketId,
 				nameLaunch: $0.missionName,
-				dateLaunch: $0.rocketId,
+				dateLaunch: $0.dateLaunchUnix,
 				isSuccess: $0.isLaunchSuccess ?? false
 			)
 		}

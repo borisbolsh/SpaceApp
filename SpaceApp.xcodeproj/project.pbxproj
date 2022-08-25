@@ -12,6 +12,7 @@
 		452B445428B147C70048B8F1 /* HeadingBlockRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452B445328B147C70048B8F1 /* HeadingBlockRocket.swift */; };
 		452E299228B8047400D9A4C5 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E299128B8047400D9A4C5 /* LaunchViewModel.swift */; };
 		452E299428B8053E00D9A4C5 /* LaunchViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E299328B8053E00D9A4C5 /* LaunchViewModelMapper.swift */; };
+		452E299628B81B6B00D9A4C5 /* DateFormatter +Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E299528B81B6B00D9A4C5 /* DateFormatter +Ext.swift */; };
 		4531AA9828B1E6040015F043 /* FeatureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531AA9728B1E6040015F043 /* FeatureItem.swift */; };
 		4534742528A59E470060460B /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534742428A59E470060460B /* MainContainer.swift */; };
 		4541316B28B12AB8001FA682 /* RocketViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4541316A28B12AB8001FA682 /* RocketViewModelMapper.swift */; };
@@ -60,6 +61,7 @@
 		452B445328B147C70048B8F1 /* HeadingBlockRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingBlockRocket.swift; sourceTree = "<group>"; };
 		452E299128B8047400D9A4C5 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		452E299328B8053E00D9A4C5 /* LaunchViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelMapper.swift; sourceTree = "<group>"; };
+		452E299528B81B6B00D9A4C5 /* DateFormatter +Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter +Ext.swift"; sourceTree = "<group>"; };
 		4531AA9728B1E6040015F043 /* FeatureItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureItem.swift; sourceTree = "<group>"; };
 		4534742428A59E470060460B /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
 		4541316A28B12AB8001FA682 /* RocketViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModelMapper.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				45CE23B828B18A5F008E4454 /* UINavigationController+Ext.swift */,
+				452E299528B81B6B00D9A4C5 /* DateFormatter +Ext.swift */,
 				45CE23B928B18A5F008E4454 /* UIColor+Ext.swift */,
 				459CF67628B5683F00478AD5 /* UIStackView+Ext.swift */,
 				45CE23BA28B18A5F008E4454 /* UIView+Ext.swift */,
@@ -551,6 +554,7 @@
 				459D4B8928A940F300DD26DD /* MainRouter.swift in Sources */,
 				45C4800028AAA3C60003A755 /* Constants.swift in Sources */,
 				45D06DDF28B6898A005B6C23 /* DetailsPresenter.swift in Sources */,
+				452E299628B81B6B00D9A4C5 /* DateFormatter +Ext.swift in Sources */,
 				45C4801F28AAE7DE0003A755 /* SpacexDataService.swift in Sources */,
 				458EED7228AC3093003ABC7F /* RocketViewModel.swift in Sources */,
 				45CE23BD28B18A5F008E4454 /* UIView+Ext.swift in Sources */,
