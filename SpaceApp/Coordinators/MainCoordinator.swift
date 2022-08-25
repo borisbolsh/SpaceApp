@@ -30,22 +30,22 @@ final class MainCoordinator: Coordinator {
 		)
 	}
 
-	private func detailsModule() {
+	private func detailsModule(idRocket: String, nameRocket: String) {
 		let container = DetailsContainer.assemble(
+			idRocket: idRocket,
+			nameRocket: nameRocket,
 			service: appDependency.networkService,
 			routingHandler: self,
 			moduleOutput: nil
 		)
-
-		navigationController.dismiss(animated: true) { [weak self] in
-			self?.navigationController.pushViewController(container.viewController, animated: true)
-		}
+		navigationController.popViewController(animated: true)
+		navigationController.pushViewController(container.viewController, animated: true)
 	}
 }
 
 extension MainCoordinator: MainRouterRoutingHandler {
-	func performRouteToDetails() {
-		detailsModule()
+	func performRouteToDetails(idRocket: String, nameRocket: String) {
+		detailsModule(idRocket: idRocket, nameRocket: nameRocket)
 	}
 }
 

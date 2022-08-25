@@ -56,9 +56,8 @@ extension MainPresenter: HeadingBlockRocketViewOutput {
 }
 
 extension MainPresenter: ButtonLaunchesBlockRocketViewOutput {
-	func didTapOnShowLaunches(idRocket: String) {
-		// TODO: route to launches
-		print(idRocket)
-		router.routeToDetails()
+	func didTapOnShowLaunches(idRocket: String, nameRocket: String) {
+//		print(idRocket + nameRocket)
+		router.routeToDetails(idRocket: idRocket, nameRocket: nameRocket)
 	}
 }

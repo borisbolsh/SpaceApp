@@ -1,13 +1,13 @@
 import UIKit
 
 protocol DetailsLaunchesCellViewInput {
-//	func configure(model: )
+	func configure(model: LaunchViewModel)
 }
 
 final class DetailsLaunchesCell: UITableViewCell {
 	private enum Constants {
 		enum LaunchView {
-			static let heightItem: CGFloat = 150
+			static let heightItem: CGFloat = 100
 			static let insetTop: CGFloat = 8
 			static let insetBottom: CGFloat = -8
 			static let insetLeft: CGFloat = 32
@@ -61,8 +61,10 @@ final class DetailsLaunchesCell: UITableViewCell {
 			dateLabel.leftAnchor.constraint(equalTo: launchView.leftAnchor, constant: 24),
 			dateLabel.bottomAnchor.constraint(equalTo: launchView.bottomAnchor, constant: -24),
 
-			statusImageView.centerXAnchor.constraint(equalTo: launchView.centerXAnchor),
-			statusImageView.rightAnchor.constraint(equalTo: launchView.rightAnchor, constant: -24)
+			statusImageView.centerYAnchor.constraint(equalTo: launchView.centerYAnchor),
+			statusImageView.rightAnchor.constraint(equalTo: launchView.rightAnchor, constant: -24),
+			statusImageView.widthAnchor.constraint(equalToConstant: 32),
+			statusImageView.heightAnchor.constraint(equalToConstant: 32),
 
 		])
 	}
@@ -73,9 +75,16 @@ final class DetailsLaunchesCell: UITableViewCell {
 		launchView.backgroundColor = Resourses.Colors.secondaryBackground
 
 		launchView.layer.cornerRadius = 20
+
+		titleLabel.tintColor = Resourses.Colors.lightText
+		dateLabel.tintColor = Resourses.Colors.secondaryText
 	}
 }
 
-extension DetailsLaunchesCellViewInput {
-
+extension DetailsLaunchesCell: DetailsLaunchesCellViewInput {
+	func configure(model: LaunchViewModel) {
+		titleLabel.text = model.nameLaunch
+		dateLabel.text = model.dateLaunch
+		statusImageView.image = model.isSuccess ? Resourses.Images.launchOk : Resourses.Images.launchCencel
+	}
 }

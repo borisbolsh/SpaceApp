@@ -4,6 +4,7 @@ final class DetailsViewController: UIViewController {
 	private let output: DetailsViewOutput
 
 	private let tableView = UITableView()
+	private var viewModels: [LaunchViewModel] = []
 
 	init(output: DetailsViewOutput) {
 		self.output = output
@@ -27,7 +28,12 @@ final class DetailsViewController: UIViewController {
 
 // MARK: View input
 
-extension DetailsViewController: DetailsViewInput {}
+extension DetailsViewController: DetailsViewInput {
+	func set(viewModels: [LaunchViewModel]) {
+		self.viewModels = viewModels
+		tableView.reloadData()
+	}
+}
 
 // MARK: Private
 
@@ -59,7 +65,7 @@ extension DetailsViewController {
 
 extension DetailsViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 3
+		return viewModels.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,7 +74,7 @@ extension DetailsViewController: UITableViewDataSource {
 		cell.selectionStyle = .none
 
 		if let cell = cell as? DetailsLaunchesCell {
-//			cell.configure(model: model)
+			cell.configure(model: viewModels[indexPath.row])
 		}
 
 		return cell

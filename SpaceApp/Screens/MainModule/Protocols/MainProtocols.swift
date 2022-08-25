@@ -25,9 +25,9 @@ protocol MainInteractorOutput: AnyObject {
 }
 
 protocol MainRouterInput: AnyObject {
-	func routeToDetails()
+	func routeToDetails(idRocket: String, nameRocket: String)
 }
 
 protocol MainRouterRoutingHandler: AnyObject {
-	func performRouteToDetails()
+	func performRouteToDetails(idRocket: String, nameRocket: String)
 }

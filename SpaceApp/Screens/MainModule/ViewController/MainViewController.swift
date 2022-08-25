@@ -274,6 +274,7 @@ extension MainViewController {
 		launchesButtonBlock.setup(
 			textButton: Resourses.Buttons.launchesButtonString,
 			idRocket: viewModels[numberRocketToShow].id,
+			nameRocket: viewModels[numberRocketToShow].title,
 			output: output as? ButtonLaunchesBlockRocketViewOutput
 		)
 	}

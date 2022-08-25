@@ -4,12 +4,13 @@ protocol ButtonLaunchesBlockRocketViewInput {
 	func setup(
 		textButton: String,
 		idRocket: String,
+		nameRocket: String,
 		output: ButtonLaunchesBlockRocketViewOutput?
 	)
 }
 
 protocol ButtonLaunchesBlockRocketViewOutput: AnyObject {
-	func didTapOnShowLaunches(idRocket: String)
+	func didTapOnShowLaunches(idRocket: String, nameRocket: String)
 }
 
 final class ButtonLaunchesBlockRocket: UIView {
@@ -22,6 +23,7 @@ final class ButtonLaunchesBlockRocket: UIView {
 	private weak var output: ButtonLaunchesBlockRocketViewOutput?
 	private let launchesButton = UIButton()
 	private var idRocket: String?
+	private var nameRocket: String?
 
 	init() {
 		super.init(frame: .zero)
@@ -63,10 +65,12 @@ extension ButtonLaunchesBlockRocket: ButtonLaunchesBlockRocketViewInput {
 	func setup(
 		textButton: String,
 		idRocket: String,
+		nameRocket: String,
 		output: ButtonLaunchesBlockRocketViewOutput?) {
 			launchesButton.setTitle(textButton, for: .normal)
 			self.output = output
 			self.idRocket = idRocket
+			self.nameRocket = nameRocket
 	}
 }
 
@@ -74,9 +78,12 @@ extension ButtonLaunchesBlockRocket: ButtonLaunchesBlockRocketViewInput {
 
 extension ButtonLaunchesBlockRocket {
 	@objc func didTapOnLaunchesBtn() {
-		guard let idRocket = idRocket else {
+		guard
+			let idRocket = idRocket,
+			let nameRocket = nameRocket
+		else {
 			return
 		}
-		output?.didTapOnShowLaunches(idRocket: idRocket)
+		output?.didTapOnShowLaunches(idRocket: idRocket, nameRocket: nameRocket)
 	}
 }

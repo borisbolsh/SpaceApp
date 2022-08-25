@@ -5,12 +5,17 @@ final class DetailsContainer {
 	let viewController: UIViewController
 	private weak var router: DetailsRouterInput?
 
-	static func assemble(service: SpacexDataNetworkServiceProtocol,
+	static func assemble(idRocket: String,
+											 nameRocket: String,
+											 service: SpacexDataNetworkServiceProtocol,
 											 routingHandler: DetailsRouterRoutingHandler,
 											 moduleOutput: DetailsModuleOutput?) -> DetailsContainer {
 		let router = DetailsRouter()
 		let interactor = DetailsInteractor(spacexDataNetworkService: service)
-		let presenter = DetailsPresenter(router: router, interactor: interactor)
+		let presenter = DetailsPresenter(idRocket: idRocket,
+																		 nameRocket: nameRocket,
+																		 router: router,
+																		 interactor: interactor)
 		let viewController = DetailsViewController(output: presenter)
 
 		presenter.view = viewController

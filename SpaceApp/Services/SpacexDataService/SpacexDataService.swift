@@ -2,7 +2,7 @@ import Foundation
 
 typealias RocketsSpacexDataServiceCompletion = ((Result<[RocketsDTO], Error>) -> Void)
 
-typealias LaunchesSpacexDataServiceCompletion = ((Result<[Launches], Error>) -> Void)
+typealias LaunchesSpacexDataServiceCompletion = ((Result<[LaunchDTO], Error>) -> Void)
 
 protocol SpacexDataNetworkServiceProtocol {
 	func obtainRocketsHistory(completion: @escaping RocketsSpacexDataServiceCompletion)

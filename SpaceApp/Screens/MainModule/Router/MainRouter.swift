@@ -5,7 +5,7 @@ final class MainRouter {
 }
 
 extension MainRouter: MainRouterInput {
-	func routeToDetails() {
-		routingHandler?.performRouteToDetails()
+	func routeToDetails(idRocket: String, nameRocket: String) {
+		routingHandler?.performRouteToDetails(idRocket: idRocket, nameRocket: nameRocket)
 	}
 }

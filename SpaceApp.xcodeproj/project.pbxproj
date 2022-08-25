@@ -10,6 +10,8 @@
 		4510370528B2AC1C00C7B42D /* ButtonBlockRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510370428B2AC1C00C7B42D /* ButtonBlockRocket.swift */; };
 		452B445228B147A60048B8F1 /* HeadingBlockRocket.xib in Resources */ = {isa = PBXBuildFile; fileRef = 452B445128B147A60048B8F1 /* HeadingBlockRocket.xib */; };
 		452B445428B147C70048B8F1 /* HeadingBlockRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452B445328B147C70048B8F1 /* HeadingBlockRocket.swift */; };
+		452E299228B8047400D9A4C5 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E299128B8047400D9A4C5 /* LaunchViewModel.swift */; };
+		452E299428B8053E00D9A4C5 /* LaunchViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E299328B8053E00D9A4C5 /* LaunchViewModelMapper.swift */; };
 		4531AA9828B1E6040015F043 /* FeatureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531AA9728B1E6040015F043 /* FeatureItem.swift */; };
 		4534742528A59E470060460B /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534742428A59E470060460B /* MainContainer.swift */; };
 		4541316B28B12AB8001FA682 /* RocketViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4541316A28B12AB8001FA682 /* RocketViewModelMapper.swift */; };
@@ -56,6 +58,8 @@
 		4510370428B2AC1C00C7B42D /* ButtonBlockRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBlockRocket.swift; sourceTree = "<group>"; };
 		452B445128B147A60048B8F1 /* HeadingBlockRocket.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadingBlockRocket.xib; sourceTree = "<group>"; };
 		452B445328B147C70048B8F1 /* HeadingBlockRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingBlockRocket.swift; sourceTree = "<group>"; };
+		452E299128B8047400D9A4C5 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		452E299328B8053E00D9A4C5 /* LaunchViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelMapper.swift; sourceTree = "<group>"; };
 		4531AA9728B1E6040015F043 /* FeatureItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureItem.swift; sourceTree = "<group>"; };
 		4534742428A59E470060460B /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
 		4541316A28B12AB8001FA682 /* RocketViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModelMapper.swift; sourceTree = "<group>"; };
@@ -117,6 +121,15 @@
 				4510370428B2AC1C00C7B42D /* ButtonBlockRocket.swift */,
 			);
 			path = ButtonLaunchesBlockRocket;
+			sourceTree = "<group>";
+		};
+		452E299028B8044F00D9A4C5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				452E299128B8047400D9A4C5 /* LaunchViewModel.swift */,
+				452E299328B8053E00D9A4C5 /* LaunchViewModelMapper.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		4534742128A596B00060460B /* Helpers */ = {
@@ -423,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				45D06DDE28B6898A005B6C23 /* DetailsPresenter.swift */,
+				452E299028B8044F00D9A4C5 /* ViewModels */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -550,8 +564,10 @@
 				45C4801E28AAE7DE0003A755 /* LaunchesDTO.swift in Sources */,
 				45C4801728AAE7D50003A755 /* AppDependency.swift in Sources */,
 				4510370528B2AC1C00C7B42D /* ButtonBlockRocket.swift in Sources */,
+				452E299228B8047400D9A4C5 /* LaunchViewModel.swift in Sources */,
 				4534742528A59E470060460B /* MainContainer.swift in Sources */,
 				454A377F28B418D20056967A /* StageInfoBlockRocket.swift in Sources */,
+				452E299428B8053E00D9A4C5 /* LaunchViewModelMapper.swift in Sources */,
 				459D4B8C28A9414E00DD26DD /* MainViewController.swift in Sources */,
 				454A378128B418D20056967A /* StageTextLine.swift in Sources */,
 				459D4B8628A940D100DD26DD /* MainInteractor.swift in Sources */,
