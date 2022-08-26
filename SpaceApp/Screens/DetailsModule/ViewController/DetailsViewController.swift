@@ -18,17 +18,18 @@ final class DetailsViewController: UIViewController {
 	override func viewDidLoad() {
 		output.viewDidLoad()
 
+		setupNavigationBar()
 		setupSubviews()
-	}
-
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-		return .lightContent
 	}
 }
 
 // MARK: View input
 
 extension DetailsViewController: DetailsViewInput {
+	func set(title: String) {
+		self.title = title
+	}
+
 	func set(viewModels: [LaunchViewModel]) {
 		self.viewModels = viewModels
 		tableView.reloadData()
@@ -38,10 +39,26 @@ extension DetailsViewController: DetailsViewInput {
 // MARK: Private
 
 extension DetailsViewController {
+	private func setupNavigationBar() {
+		self.navigationController?.navigationBar.barStyle = .black
+		self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+		self.navigationController?.navigationBar.shadowImage = UIImage()
+		self.navigationController?.navigationBar.isTranslucent = true
+		self.navigationController?.navigationBar.barTintColor = UIColor.white
+		self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+		self.navigationController?.navigationBar.tintColor = UIColor.white
+		self.navigationController?.view.backgroundColor = UIColor.clear
+
+		let backButton = UIBarButtonItem()
+		backButton.title = Resourses.Buttons.backButtonString
+		self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+	}
+
 	private func setupSubviews() {
 		tableView.frame = view.bounds
-//		tableView.delegate = self
 		tableView.dataSource = self
+
+		tableView.rowHeight = UITableView.automaticDimension
 
 		tableView.register(DetailsLaunchesCell.self, forCellReuseIdentifier: String(describing: DetailsLaunchesCell.self))
 
@@ -80,10 +97,3 @@ extension DetailsViewController: UITableViewDataSource {
 		return cell
 	}
 }
-
-// MARK: TableViewDelegate
-
-//extension DetailsViewController: UITableViewDelegate {
-//
-//}
-//

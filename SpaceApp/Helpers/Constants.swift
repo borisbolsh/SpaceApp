@@ -64,5 +64,6 @@ enum Resourses {
 
 	enum Buttons {
 		static let launchesButtonString = "Посмотреть запуски"
+		static let backButtonString = "Назад"
 	}
 }

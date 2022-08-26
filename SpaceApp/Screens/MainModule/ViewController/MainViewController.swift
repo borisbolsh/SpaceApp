@@ -243,7 +243,8 @@ extension MainViewController {
 		pageControlView.backgroundColor = Resourses.Colors.secondaryBackground
 		pageControl.pageIndicatorTintColor = Resourses.Colors.secondControl
 		pageControl.currentPageIndicatorTintColor = Resourses.Colors.activeControl
-
+		pageControl.isUserInteractionEnabled = false
+		
 		view.backgroundColor = Resourses.Colors.primaryBackground
 		contentView.backgroundColor = .white
 		contentBlockView.backgroundColor = .black

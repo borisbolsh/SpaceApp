@@ -12,6 +12,24 @@ final class DetailsLaunchesCell: UITableViewCell {
 			static let insetBottom: CGFloat = -8
 			static let insetLeft: CGFloat = 32
 			static let insetRight: CGFloat = -32
+			static let cornerRadius: CGFloat = 20
+		}
+
+		enum TitleLabel {
+			static let insetTop: CGFloat = 24
+			static let insetLeft: CGFloat = 24
+			static let height: CGFloat = 24
+		}
+
+		enum DateLabel {
+			static let insetLeft: CGFloat = 24
+			static let insetBottom: CGFloat = -20
+		}
+
+		enum StatusImageView {
+			static let insetRight: CGFloat = -24
+			static let height: CGFloat = 32
+			static let width: CGFloat = 32
 		}
 	}
 
@@ -54,18 +72,18 @@ final class DetailsLaunchesCell: UITableViewCell {
 			launchView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.LaunchView.insetTop),
 			launchView.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.LaunchView.heightItem),
 
-			titleLabel.topAnchor.constraint(equalTo: launchView.topAnchor, constant: 24),
-			titleLabel.leftAnchor.constraint(equalTo: launchView.leftAnchor, constant: 24),
+			titleLabel.topAnchor.constraint(equalTo: launchView.topAnchor, constant: Constants.TitleLabel.insetTop),
+			titleLabel.leftAnchor.constraint(equalTo: launchView.leftAnchor, constant: Constants.TitleLabel.insetLeft),
+			titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.TitleLabel.height),
 
 			dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-			dateLabel.leftAnchor.constraint(equalTo: launchView.leftAnchor, constant: 24),
-			dateLabel.bottomAnchor.constraint(equalTo: launchView.bottomAnchor, constant: -20),
+			dateLabel.leftAnchor.constraint(equalTo: launchView.leftAnchor, constant: Constants.DateLabel.insetLeft),
+			dateLabel.bottomAnchor.constraint(equalTo: launchView.bottomAnchor, constant: Constants.DateLabel.insetBottom),
 
 			statusImageView.centerYAnchor.constraint(equalTo: launchView.centerYAnchor),
-			statusImageView.rightAnchor.constraint(equalTo: launchView.rightAnchor, constant: -24),
-			statusImageView.widthAnchor.constraint(equalToConstant: 32),
-			statusImageView.heightAnchor.constraint(equalToConstant: 32),
-
+			statusImageView.rightAnchor.constraint(equalTo: launchView.rightAnchor, constant: Constants.StatusImageView.insetRight),
+			statusImageView.widthAnchor.constraint(equalToConstant: Constants.StatusImageView.width),
+			statusImageView.heightAnchor.constraint(equalToConstant: Constants.StatusImageView.height),
 		])
 	}
 
@@ -74,12 +92,11 @@ final class DetailsLaunchesCell: UITableViewCell {
 		contentView.backgroundColor = .clear
 		launchView.backgroundColor = Resourses.Colors.secondaryBackground
 
-		launchView.layer.cornerRadius = 20
+		launchView.layer.cornerRadius = Constants.LaunchView.cornerRadius
 
 		titleLabel.font = Resourses.Fonts.detailsLaunchesTitle
 		titleLabel.textColor = Resourses.Colors.lightText
 		dateLabel.textColor = Resourses.Colors.secondaryText
-
 	}
 }
 

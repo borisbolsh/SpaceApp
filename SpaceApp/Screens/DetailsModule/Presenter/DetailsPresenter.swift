@@ -28,6 +28,7 @@ extension DetailsPresenter: DetailsModuleInput {}
 
 extension DetailsPresenter: DetailsViewOutput {
 	func viewDidLoad(){
+		view?.set(title: nameRocket)
 		interactor.getLaunchesData()
 	}
 }
