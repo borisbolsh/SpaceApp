@@ -36,6 +36,7 @@
 		459D4B8628A940D100DD26DD /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8528A940D100DD26DD /* MainInteractor.swift */; };
 		459D4B8928A940F300DD26DD /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8828A940F300DD26DD /* MainRouter.swift */; };
 		459D4B8C28A9414E00DD26DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8B28A9414E00DD26DD /* MainViewController.swift */; };
+		45A6A29C28BA9389001EA52E /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6A29B28BA9389001EA52E /* SettingsService.swift */; };
 		45B792B028ACA7BB00716044 /* InfoTextLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B792AF28ACA7BB00716044 /* InfoTextLine.swift */; };
 		45B792B428ACAA0300716044 /* InfoTextLine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B792B328ACAA0300716044 /* InfoTextLine.xib */; };
 		45C4800028AAA3C60003A755 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C47FFF28AAA3C60003A755 /* Constants.swift */; };
@@ -59,6 +60,8 @@
 		45D06DE228B68A37005B6C23 /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DE128B68A37005B6C23 /* DetailsRouter.swift */; };
 		45D06DE428B68A72005B6C23 /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DE328B68A72005B6C23 /* DetailsInteractor.swift */; };
 		45E2F07328B69CE5007A45A3 /* DetailsLaunchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E2F07228B69CE5007A45A3 /* DetailsLaunchesCell.swift */; };
+		45EDDA4E28BA3B8100F912A5 /* SettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EDDA4D28BA3B8100F912A5 /* SettingsTableCell.swift */; };
+		45EDDA5128BA457500F912A5 /* SettingsSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EDDA5028BA457500F912A5 /* SettingsSegmentedControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +95,7 @@
 		459D4B8528A940D100DD26DD /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		459D4B8828A940F300DD26DD /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		459D4B8B28A9414E00DD26DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		45A6A29B28BA9389001EA52E /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		45B792AF28ACA7BB00716044 /* InfoTextLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTextLine.swift; sourceTree = "<group>"; };
 		45B792B328ACAA0300716044 /* InfoTextLine.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTextLine.xib; sourceTree = "<group>"; };
 		45C47FFF28AAA3C60003A755 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Helpers/Constants.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 		45D06DE128B68A37005B6C23 /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
 		45D06DE328B68A72005B6C23 /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
 		45E2F07228B69CE5007A45A3 /* DetailsLaunchesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsLaunchesCell.swift; sourceTree = "<group>"; };
+		45EDDA4D28BA3B8100F912A5 /* SettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableCell.swift; sourceTree = "<group>"; };
+		45EDDA5028BA457500F912A5 /* SettingsSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSegmentedControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				454E703928B9587800B01300 /* SettingsViewController.swift */,
+				45EDDA4F28BA453300F912A5 /* Views */,
+				45EDDA4C28BA3B6C00F912A5 /* Cells */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -250,6 +258,7 @@
 		4569DE9A28A98DFA0001099A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				45EBF8C228B9E84300CCD87D /* SettingsService */,
 				45C4800928AAAC300003A755 /* NetworkService.swift */,
 				45C4801828AAE7DE0003A755 /* SpacexDataService */,
 			);
@@ -542,6 +551,30 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		45EBF8C228B9E84300CCD87D /* SettingsService */ = {
+			isa = PBXGroup;
+			children = (
+				45A6A29B28BA9389001EA52E /* SettingsService.swift */,
+			);
+			path = SettingsService;
+			sourceTree = "<group>";
+		};
+		45EDDA4C28BA3B6C00F912A5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				45EDDA4D28BA3B8100F912A5 /* SettingsTableCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		45EDDA4F28BA453300F912A5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				45EDDA5028BA457500F912A5 /* SettingsSegmentedControl.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -648,6 +681,7 @@
 				454A377F28B418D20056967A /* StageInfoBlockRocket.swift in Sources */,
 				454E703A28B9587800B01300 /* SettingsViewController.swift in Sources */,
 				452E299428B8053E00D9A4C5 /* LaunchViewModelMapper.swift in Sources */,
+				45EDDA5128BA457500F912A5 /* SettingsSegmentedControl.swift in Sources */,
 				459D4B8C28A9414E00DD26DD /* MainViewController.swift in Sources */,
 				454E703E28B958A600B01300 /* SettingsInteractor.swift in Sources */,
 				454A378128B418D20056967A /* StageTextLine.swift in Sources */,
@@ -655,6 +689,7 @@
 				45D06DD928B686B4005B6C23 /* DetailsContainer.swift in Sources */,
 				4541316B28B12AB8001FA682 /* RocketViewModelMapper.swift in Sources */,
 				45CE23C728B18B05008E4454 /* FeaturesBlockRocket.swift in Sources */,
+				45A6A29C28BA9389001EA52E /* SettingsService.swift in Sources */,
 				45B792B028ACA7BB00716044 /* InfoTextLine.swift in Sources */,
 				454E703828B9585F00B01300 /* SettingsProtocols.swift in Sources */,
 				45C4800528AAA5C50003A755 /* MainCoordinator.swift in Sources */,
@@ -663,6 +698,7 @@
 				45D06DDB28B6871C005B6C23 /* DetailsProtocols.swift in Sources */,
 				454E704028B958BB00B01300 /* SettingsRouter.swift in Sources */,
 				45C4800228AAA57F0003A755 /* MainProtocols.swift in Sources */,
+				45EDDA4E28BA3B8100F912A5 /* SettingsTableCell.swift in Sources */,
 				45E2F07328B69CE5007A45A3 /* DetailsLaunchesCell.swift in Sources */,
 				452B445428B147C70048B8F1 /* HeadingBlockRocket.swift in Sources */,
 				454E703628B9581F00B01300 /* SettingsContainer.swift in Sources */,

@@ -20,8 +20,19 @@ extension SettingsPresenter: SettingsModuleInput {}
 
 extension SettingsPresenter: SettingsViewOutput {
 	func viewDidLoad(){
-		view?.set(title: "Title")
+		view?.set(title: Resourses.Settings.titleSectionString)
+		interactor.getSettingsData()
+	}
+
+	func closeBtnTapped() {
+		router.closeSettinsModule()
 	}
 }
 
 extension SettingsPresenter: SettingsInteractorOutput {}
+
+extension SettingsPresenter: SettingsSegmentedControlDelegate {
+	func change(toIndex: Int) {
+			print("segmentedControl index changed to \(toIndex)")
+	}
+}

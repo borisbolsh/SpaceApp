@@ -107,7 +107,5 @@ extension DetailsLaunchesCell: DetailsLaunchesCellViewInput {
 
 		dateLabel.text = DateFormatter.launchDateTimeFormatter.string(from: date)
 		statusImageView.image = model.isSuccess ? Resourses.Images.launchOk : Resourses.Images.launchCencel
-
-		layoutIfNeeded()
 	}
 }

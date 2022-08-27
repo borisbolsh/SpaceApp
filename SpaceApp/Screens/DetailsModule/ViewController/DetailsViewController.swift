@@ -20,6 +20,7 @@ final class DetailsViewController: UIViewController {
 
 		setupNavigationBar()
 		setupSubviews()
+		configurateUI()
 	}
 }
 
@@ -44,10 +45,10 @@ extension DetailsViewController {
 		self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
 		self.navigationController?.navigationBar.shadowImage = UIImage()
 		self.navigationController?.navigationBar.isTranslucent = true
-		self.navigationController?.navigationBar.barTintColor = UIColor.white
+		self.navigationController?.navigationBar.barTintColor = .white
 		self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-		self.navigationController?.navigationBar.tintColor = UIColor.white
-		self.navigationController?.view.backgroundColor = UIColor.clear
+		self.navigationController?.navigationBar.tintColor = .white
+		self.navigationController?.view.backgroundColor = .clear
 
 		let backButton = UIBarButtonItem()
 		backButton.title = Resourses.Buttons.backButtonString
@@ -63,13 +64,6 @@ extension DetailsViewController {
 		tableView.register(DetailsLaunchesCell.self, forCellReuseIdentifier: String(describing: DetailsLaunchesCell.self))
 
 		view.addSubview(tableView)
-
-		setupUI()
-		configurateUI()
-	}
-
-	private func setupUI() {
-
 	}
 
 	private func configurateUI() {

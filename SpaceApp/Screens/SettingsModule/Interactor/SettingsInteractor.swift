@@ -4,4 +4,8 @@ final class SettingsInteractor {
 	weak var output: SettingsInteractorOutput?
 }
 
-extension SettingsInteractor: SettingsInteractorInput {}
+extension SettingsInteractor: SettingsInteractorInput {
+	func getSettingsData() {
+
+	}
+}

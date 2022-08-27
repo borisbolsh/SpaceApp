@@ -41,12 +41,28 @@ final class MainCoordinator: Coordinator {
 		navigationController.popViewController(animated: true)
 		navigationController.pushViewController(container.viewController, animated: true)
 	}
+
+	private func settingsModule() {
+		let container = SettingsContainer.assemble(
+			routingHandler: self,
+			moduleOutput: nil
+		)
+
+		let settingsNavigationController = UINavigationController()
+		settingsNavigationController.setViewControllers([container.viewController], animated: true)
+		navigationController.present(settingsNavigationController, animated: true, completion: nil)
+	}
 }
 
 extension MainCoordinator: MainRouterRoutingHandler {
 	func performRouteToDetails(idRocket: String, nameRocket: String) {
 		detailsModule(idRocket: idRocket, nameRocket: nameRocket)
 	}
+
+	func performRouteToSettings() {
+		settingsModule()
+	}
 }
 
 extension MainCoordinator: DetailsRouterRoutingHandler {}
+extension MainCoordinator: SettingsRouterRoutingHandler {}

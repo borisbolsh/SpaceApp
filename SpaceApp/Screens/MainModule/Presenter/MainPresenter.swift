@@ -51,13 +51,12 @@ extension MainPresenter: MainInteractorOutput {
 
 extension MainPresenter: HeadingBlockRocketViewOutput {
 	func didTapOnSettings() {
-		// TODO: route to settings
+		router.routeToSettings()
 	}
 }
 
 extension MainPresenter: ButtonLaunchesBlockRocketViewOutput {
 	func didTapOnShowLaunches(idRocket: String, nameRocket: String) {
-//		print(idRocket + nameRocket)
 		router.routeToDetails(idRocket: idRocket, nameRocket: nameRocket)
 	}
 }

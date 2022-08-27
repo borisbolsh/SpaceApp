@@ -66,4 +66,9 @@ enum Resourses {
 		static let launchesButtonString = "Посмотреть запуски"
 		static let backButtonString = "Назад"
 	}
+
+	enum Settings {
+		static let closeButtonString = "Закрыть"
+		static let titleSectionString = "Настройки"
+	}
 }
