@@ -6,6 +6,7 @@ protocol SettingsModuleOutput: AnyObject {}
 
 protocol SettingsViewInput: AnyObject {
 	func set(title: String)
+	func set(viewModels: [SettingsViewModel])
 }
 
 protocol SettingsViewOutput: AnyObject {
@@ -17,7 +18,10 @@ protocol SettingsInteractorInput: AnyObject {
 	func getSettingsData()
 }
 
-protocol SettingsInteractorOutput: AnyObject {}
+protocol SettingsInteractorOutput: AnyObject {
+	func didRecieveUserSettings(settings: UserSettings)
+	func didRecieveNoUserSettings()
+}
 
 protocol SettingsRouterInput: AnyObject {
 	func closeSettinsModule()

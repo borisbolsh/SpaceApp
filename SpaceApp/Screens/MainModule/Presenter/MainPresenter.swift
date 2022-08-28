@@ -6,11 +6,19 @@ final class MainPresenter {
 
 	private let router: MainRouterInput
 	private let interactor: MainInteractorInput
-	private let rocketViewModelsMapper = RocketViewModelMapper()
+	private let userSettingsFactory: UserSettingsFactoryProtocol
 
-	init(router: MainRouterInput, interactor: MainInteractorInput) {
-			self.router = router
-			self.interactor = interactor
+	private let rocketViewModelsMapper = RocketViewModelMapper()
+	private var userSettings: UserSettings?
+
+	init(
+		router: MainRouterInput,
+		interactor: MainInteractorInput,
+		userSettingsFactory: UserSettingsFactoryProtocol
+	) {
+		self.router = router
+		self.interactor = interactor
+		self.userSettingsFactory = userSettingsFactory
 	}
 }
 
@@ -26,7 +34,7 @@ extension MainPresenter {
 
 extension MainPresenter: MainViewOutput {
 	func viewDidLoad(){
-		interactor.getRocketsData()
+		interactor.getSettingsData()
 	}
 
 	func didSwipeLeft() {
@@ -39,8 +47,22 @@ extension MainPresenter: MainViewOutput {
 }
 
 extension MainPresenter: MainInteractorOutput {
+	func didRecieveUserSettings(settings: UserSettings) {
+		self.userSettings = settings
+		interactor.getRocketsData()
+	}
+
+	func didRecieveNoUserSettings() {
+		userSettings = userSettingsFactory.createFirstSettings()
+		interactor.getRocketsData()
+	}
+
 	func didRecieveRockets(rockets: [RocketsDTO]) {
-		let viewModels = rocketViewModelsMapper.map(rocketItems: rockets)
+		guard let userSettings = userSettings else {
+			return
+		}
+
+		let viewModels = rocketViewModelsMapper.map(rocketItems: rockets, userSettings: userSettings)
 		view?.set(viewModels: viewModels)
 	}
 

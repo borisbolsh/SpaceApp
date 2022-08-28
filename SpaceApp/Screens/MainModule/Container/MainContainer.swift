@@ -5,12 +5,18 @@ final class MainContainer {
 	let viewController: UIViewController
 	private weak var router: MainRouterInput?
 
-	static func assemble(service: SpacexDataNetworkServiceProtocol,
+	static func assemble(networkService: SpacexDataNetworkServiceProtocol,
+											 settingsService: DataSettingsServiceProtocol,
 											 routingHandler: MainRouterRoutingHandler,
 											 moduleOutput: MainModuleOutput?) -> MainContainer {
 		let router = MainRouter()
-		let interactor = MainInteractor(spacexDataNetworkService: service)
-		let presenter = MainPresenter(router: router, interactor: interactor)
+		let interactor = MainInteractor(
+			spacexDataNetworkService: networkService,
+			settingsService: settingsService
+		)
+		let presenter = MainPresenter(router: router,
+																	interactor: interactor,
+																	userSettingsFactory: UserSettingsFactory())
 		let viewController = MainViewController(output: presenter)
 
 		presenter.view = viewController

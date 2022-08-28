@@ -19,7 +19,8 @@ final class MainCoordinator: Coordinator {
 
 	private func setupMain() {
 		let container = MainContainer.assemble(
-			service: appDependency.networkService,
+			networkService: appDependency.networkService,
+			settingsService: appDependency.settingsService,
 			routingHandler: self,
 			moduleOutput: nil
 		)
@@ -44,6 +45,7 @@ final class MainCoordinator: Coordinator {
 
 	private func settingsModule() {
 		let container = SettingsContainer.assemble(
+			settingsService: appDependency.settingsService,
 			routingHandler: self,
 			moduleOutput: nil
 		)

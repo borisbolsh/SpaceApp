@@ -1,7 +1,7 @@
 import UIKit
 
 final class RocketViewModelMapper {
-	func map(rocketItems: [RocketsDTO]) -> [RocketViewModel] {
+	func map(rocketItems: [RocketsDTO], userSettings: UserSettings) -> [RocketViewModel] {
 		let results = rocketItems.map {
 			RocketViewModel(
 				id: $0.id,
@@ -10,20 +10,20 @@ final class RocketViewModelMapper {
 				imageName: ($0.images.first ?? "") ?? "",
 				features: [
 					FeatureViewModel(
-						title: String($0.height.feet),
-						subtitle: "\(Resourses.Features.heightString), ft"
+						title: userSettings.height == .feet ? String($0.height.feet) : String($0.height.meters),
+						subtitle: "\(Resourses.Features.heightString), \(userSettings.height.rawValue)"
 					),
 					FeatureViewModel(
-						title: String($0.diameter.feet),
-						subtitle: "\(Resourses.Features.diameterString), ft"
+						title: userSettings.diameter == .feet ?  String($0.diameter.feet) : String($0.diameter.meters),
+						subtitle: "\(Resourses.Features.diameterString), \(userSettings.diameter.rawValue)"
 					),
 					FeatureViewModel(
-						title: String($0.mass.lb),
-						subtitle: "\(Resourses.Features.massString), lb"
+						title: userSettings.mass == .pound ? String($0.mass.lb) : String($0.mass.kg) ,
+						subtitle: "\(Resourses.Features.massString), \(userSettings.mass.rawValue)"
 					),
 					FeatureViewModel(
-						title: String($0.payloadWeightsRocket.filter{ $0.id == "leo" }.first?.lb ?? 1),
-						subtitle: "\(Resourses.Features.payloadWeightsString), lb"
+						title: userSettings.payloadWeights == .pound ? String($0.payloadWeightsRocket.filter{ $0.id == "leo" }.first?.lb ?? 1) : String($0.payloadWeightsRocket.filter{ $0.id == "leo" }.first?.kg ?? 1),
+						subtitle: "\(Resourses.Features.payloadWeightsString), \(userSettings.payloadWeights.rawValue)"
 					)
 				],
 				mainInfo: [

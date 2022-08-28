@@ -53,7 +53,7 @@ extension ButtonLaunchesBlockRocket {
 	private func configureUI() {
 		self.backgroundColor = .clear
 		launchesButton.backgroundColor = Resourses.Colors.buttonBackground
-
+		launchesButton.titleLabel?.font = Resourses.Fonts.secondaryBoldText
 		launchesButton.layer.cornerRadius = Constants.ButtonLaunches.cornerRadiusBottom
 		launchesButton.addTarget(self, action: #selector(didTapOnLaunchesBtn), for: .touchUpInside)
 	}

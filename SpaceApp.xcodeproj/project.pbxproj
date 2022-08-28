@@ -36,6 +36,8 @@
 		459D4B8628A940D100DD26DD /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8528A940D100DD26DD /* MainInteractor.swift */; };
 		459D4B8928A940F300DD26DD /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8828A940F300DD26DD /* MainRouter.swift */; };
 		459D4B8C28A9414E00DD26DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4B8B28A9414E00DD26DD /* MainViewController.swift */; };
+		45A53A1D28BBB64A0089F54E /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A53A1C28BBB64A0089F54E /* UserSettings.swift */; };
+		45A53A2028BBC2410089F54E /* UserSettingsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A53A1F28BBC2410089F54E /* UserSettingsFactory.swift */; };
 		45A6A29C28BA9389001EA52E /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6A29B28BA9389001EA52E /* SettingsService.swift */; };
 		45B792B028ACA7BB00716044 /* InfoTextLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B792AF28ACA7BB00716044 /* InfoTextLine.swift */; };
 		45B792B428ACAA0300716044 /* InfoTextLine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B792B328ACAA0300716044 /* InfoTextLine.xib */; };
@@ -59,6 +61,7 @@
 		45D06DDF28B6898A005B6C23 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DDE28B6898A005B6C23 /* DetailsPresenter.swift */; };
 		45D06DE228B68A37005B6C23 /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DE128B68A37005B6C23 /* DetailsRouter.swift */; };
 		45D06DE428B68A72005B6C23 /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DE328B68A72005B6C23 /* DetailsInteractor.swift */; };
+		45DC1E9428BBF6610009EC23 /* SettingsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC1E9328BBF6610009EC23 /* SettingsItemViewModel.swift */; };
 		45E2F07328B69CE5007A45A3 /* DetailsLaunchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E2F07228B69CE5007A45A3 /* DetailsLaunchesCell.swift */; };
 		45EDDA4E28BA3B8100F912A5 /* SettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EDDA4D28BA3B8100F912A5 /* SettingsTableCell.swift */; };
 		45EDDA5128BA457500F912A5 /* SettingsSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EDDA5028BA457500F912A5 /* SettingsSegmentedControl.swift */; };
@@ -95,6 +98,8 @@
 		459D4B8528A940D100DD26DD /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		459D4B8828A940F300DD26DD /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		459D4B8B28A9414E00DD26DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		45A53A1C28BBB64A0089F54E /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		45A53A1F28BBC2410089F54E /* UserSettingsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsFactory.swift; sourceTree = "<group>"; };
 		45A6A29B28BA9389001EA52E /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		45B792AF28ACA7BB00716044 /* InfoTextLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTextLine.swift; sourceTree = "<group>"; };
 		45B792B328ACAA0300716044 /* InfoTextLine.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTextLine.xib; sourceTree = "<group>"; };
@@ -118,6 +123,7 @@
 		45D06DDE28B6898A005B6C23 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
 		45D06DE128B68A37005B6C23 /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
 		45D06DE328B68A72005B6C23 /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
+		45DC1E9328BBF6610009EC23 /* SettingsItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemViewModel.swift; sourceTree = "<group>"; };
 		45E2F07228B69CE5007A45A3 /* DetailsLaunchesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsLaunchesCell.swift; sourceTree = "<group>"; };
 		45EDDA4D28BA3B8100F912A5 /* SettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableCell.swift; sourceTree = "<group>"; };
 		45EDDA5028BA457500F912A5 /* SettingsSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSegmentedControl.swift; sourceTree = "<group>"; };
@@ -226,6 +232,9 @@
 			isa = PBXGroup;
 			children = (
 				454E703B28B9589000B01300 /* SettingsPresenter.swift */,
+				45DC1E9228BBF6080009EC23 /* ViewModels */,
+				45A53A1E28BBC22D0089F54E /* Factory */,
+				45A53A1B28BBB62A0089F54E /* Models */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -410,6 +419,22 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		45A53A1B28BBB62A0089F54E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				45A53A1C28BBB64A0089F54E /* UserSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		45A53A1E28BBC22D0089F54E /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				45A53A1F28BBC2410089F54E /* UserSettingsFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		45B792A828ACA3B500716044 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +568,14 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		45DC1E9228BBF6080009EC23 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				45DC1E9328BBF6610009EC23 /* SettingsItemViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		45E2F07128B69C7E007A45A3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -655,6 +688,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A53A2028BBC2410089F54E /* UserSettingsFactory.swift in Sources */,
 				45CE23BB28B18A5F008E4454 /* UINavigationController+Ext.swift in Sources */,
 				4531AA9828B1E6040015F043 /* FeatureItem.swift in Sources */,
 				45C4800A28AAAC300003A755 /* NetworkService.swift in Sources */,
@@ -666,6 +700,7 @@
 				458EED7228AC3093003ABC7F /* RocketViewModel.swift in Sources */,
 				45CE23BD28B18A5F008E4454 /* UIView+Ext.swift in Sources */,
 				45C4800628AAA5C50003A755 /* AppCoordinator.swift in Sources */,
+				45A53A1D28BBB64A0089F54E /* UserSettings.swift in Sources */,
 				4570A74D28B2469600BC2E2A /* MainInfoBlockRocket.swift in Sources */,
 				459CF67728B5683F00478AD5 /* UIStackView+Ext.swift in Sources */,
 				459D4B8228A93B5E00DD26DD /* MainPresenter.swift in Sources */,
@@ -682,6 +717,7 @@
 				454E703A28B9587800B01300 /* SettingsViewController.swift in Sources */,
 				452E299428B8053E00D9A4C5 /* LaunchViewModelMapper.swift in Sources */,
 				45EDDA5128BA457500F912A5 /* SettingsSegmentedControl.swift in Sources */,
+				45DC1E9428BBF6610009EC23 /* SettingsItemViewModel.swift in Sources */,
 				459D4B8C28A9414E00DD26DD /* MainViewController.swift in Sources */,
 				454E703E28B958A600B01300 /* SettingsInteractor.swift in Sources */,
 				454A378128B418D20056967A /* StageTextLine.swift in Sources */,

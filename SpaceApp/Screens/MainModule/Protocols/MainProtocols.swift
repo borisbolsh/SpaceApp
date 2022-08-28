@@ -18,10 +18,13 @@ protocol MainViewOutput: AnyObject {
 
 protocol MainInteractorInput: AnyObject {
 	func getRocketsData()
+	func getSettingsData()
 }
 
 protocol MainInteractorOutput: AnyObject {
 	func didRecieveRockets(rockets: [RocketsDTO])
+	func didRecieveUserSettings(settings: UserSettings)
+	func didRecieveNoUserSettings()
 }
 
 protocol MainRouterInput: AnyObject {

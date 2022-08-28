@@ -1,26 +1,30 @@
 import Foundation
 
-protocol DataSettingsService {
-	func getSettings(key: String) -> [String: AnyHashable]?
-	func setSettings(settings: [String: AnyHashable], key: String)
+protocol DataSettingsServiceProtocol {
+	func getSettings(completion: @escaping (UserSettings?) -> Void)
+	func setSettings(settings: UserSettings)
 }
 
-final class SettingsService: DataSettingsService {
+final class SettingsService: DataSettingsServiceProtocol {
+	private enum KeyConstants: String {
+		case settingsKey = "Settings"
+	}
+
 	private let userDefaults: UserDefaults
 
 	init(userDefaults: UserDefaults = .standard) {
 		self.userDefaults = userDefaults
 	}
 
-	func getSettings(key: String) -> [String: AnyHashable]? {
-		guard let settings: [String: AnyHashable] = readValue(key: key) else {
-			return nil
+	func getSettings(completion: @escaping (UserSettings?) -> Void) {
+		if let settings: UserSettings = readValue(key: KeyConstants.settingsKey.rawValue) {
+			completion(settings)
 		}
-		return settings
+		completion(nil)
 	}
 
-	func setSettings(settings: [String: AnyHashable], key: String) {
-		userDefaults.set(settings, forKey: key)
+	func setSettings(settings: UserSettings) {
+		userDefaults.set(settings, forKey: KeyConstants.settingsKey.rawValue)
 	}
 
 	private func saveValue(key: String, value: Any) {

@@ -1,8 +1,8 @@
 import UIKit
 
 protocol SettingsTableCellInput {
-	func setup(
-		title: String,
+	func configure(
+		model: SettingsViewModel,
 		output: SettingsTableCellOutput?
 	)
 }
@@ -23,8 +23,17 @@ final class SettingsTableCell: UITableViewCell {
 //		}
 	}
 
+	weak var output: SettingsTableCellOutput?
+	private var model: SettingsViewModel?
+
 	override init(style: CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+		//		let codeSegmented = SettingsSegmentedControl(frame: CGRect(x: 0, y: 50, width: self.view.frame.width, height: 50), buttonTitle: ["OFF","HTTP","AUTO"])
+		//		codeSegmented.backgroundColor = .clear
+		//		codeSegmented.delegate = self
+		//		view.addSubview(codeSegmented)
+
 		setupUI()
 		configureUI()
 	}
@@ -86,8 +95,15 @@ final class SettingsTableCell: UITableViewCell {
 }
 
 extension SettingsTableCell: SettingsTableCellInput {
-	func setup(
-		title: String,
+	func configure(
+		model: SettingsViewModel,
 		output: SettingsTableCellOutput?
-	){}
+	){
+		guard let output = output else {
+			return
+		}
+		self.model = model
+		self.output = output
+//		updateUI()
+	}
 }

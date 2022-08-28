@@ -4,7 +4,7 @@ final class SettingsViewController: UIViewController {
 	private let output: SettingsViewOutput
 	
 	private let tableView = UITableView()
-	private var viewModels: [LaunchViewModel] = []
+	private var viewModels: [SettingsViewModel] = []
 
 	init(output: SettingsViewOutput) {
 		self.output = output
@@ -31,6 +31,7 @@ extension SettingsViewController {
 		self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
 		self.navigationController?.navigationBar.tintColor = .white
 		self.navigationController?.view.backgroundColor = .clear
+		self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
 
 		setupRightBarButtons()
 	}
@@ -54,15 +55,11 @@ extension SettingsViewController {
 		tableView.register(SettingsTableCell.self, forCellReuseIdentifier: String(describing: SettingsTableCell.self))
 
 		view.addSubview(tableView)
-
-//		let codeSegmented = SettingsSegmentedControl(frame: CGRect(x: 0, y: 50, width: self.view.frame.width, height: 50), buttonTitle: ["OFF","HTTP","AUTO"])
-//		codeSegmented.backgroundColor = .clear
-//		codeSegmented.delegate = self
-//		view.addSubview(codeSegmented)
 	}
 
 	private func configurateUI() {
 		view.backgroundColor = Resourses.Colors.primaryBackground
+		tableView.backgroundColor = .clear
 	}
 }
 
@@ -71,6 +68,11 @@ extension SettingsViewController {
 extension SettingsViewController: SettingsViewInput {
 	func set(title: String) {
 		self.title = title
+	}
+
+	func set(viewModels: [SettingsViewModel]) {
+		self.viewModels = viewModels
+		tableView.reloadData()
 	}
 }
 
@@ -95,7 +97,8 @@ extension SettingsViewController: UITableViewDataSource {
 		cell.selectionStyle = .none
 
 		if let cell = cell as? SettingsTableCell {
-//			cell.configure(model: viewModels[indexPath.row])
+			cell.configure(model: viewModels[indexPath.row],
+										 output: output as? SettingsTableCellOutput)
 		}
 
 		return cell

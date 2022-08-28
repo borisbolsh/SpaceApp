@@ -5,11 +5,13 @@ final class SettingsContainer {
 	let viewController: UIViewController
 	private weak var router: SettingsRouterInput?
 
-	static func assemble(routingHandler: SettingsRouterRoutingHandler,
+	static func assemble(settingsService: DataSettingsServiceProtocol,
+											 routingHandler: SettingsRouterRoutingHandler,
 											 moduleOutput: SettingsModuleOutput?) -> SettingsContainer {
 		let router = SettingsRouter()
-		let interactor = SettingsInteractor()
-		let presenter = SettingsPresenter(router: router,
+		let interactor = SettingsInteractor(settingsService: settingsService)
+		let presenter = SettingsPresenter(userSettingsFactory: UserSettingsFactory(),
+																			router: router,
 																			interactor: interactor)
 		let viewController = SettingsViewController(output: presenter)
 
