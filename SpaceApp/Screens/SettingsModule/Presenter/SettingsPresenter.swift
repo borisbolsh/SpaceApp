@@ -44,12 +44,16 @@ extension SettingsPresenter: SettingsInteractorOutput {
 
 	func didRecieveNoUserSettings() {
 		userSettings = userSettingsFactory.createFirstSettings()
+		if let userSettings = userSettings {
+			let userSettingsViewModel = userSettingsFactory.createSettingsViewModels(userSettings: userSettings)
+			view?.set(viewModels: userSettingsViewModel)
+		}
 	}
 }
 
 extension SettingsPresenter: SettingsSegmentedControlDelegate {
-	func change(toIndex: Int) {
-			print("segmentedControl index changed to \(toIndex)")
+	func change(toIndex: Int, btnText: String) {
+			print("segmentedControl index changed to \(toIndex), btn text - \(btnText)")
 	}
 }
 

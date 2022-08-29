@@ -51,6 +51,7 @@ extension SettingsViewController {
 		tableView.frame = view.bounds
 		tableView.dataSource = self
 		tableView.rowHeight = UITableView.automaticDimension
+		tableView.contentInset.top = 56
 
 		tableView.register(SettingsTableCell.self, forCellReuseIdentifier: String(describing: SettingsTableCell.self))
 
@@ -92,7 +93,6 @@ extension SettingsViewController: UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
 		let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SettingsTableCell.self), for: indexPath)
 		cell.selectionStyle = .none
 

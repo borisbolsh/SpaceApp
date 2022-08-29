@@ -1,30 +1,44 @@
 import UIKit
 
 protocol SettingsSegmentedControlDelegate: AnyObject {
-	func change(toIndex: Int)
+	func change(toIndex: Int, btnText: String)
+}
+
+protocol SettingsSegmentedControlInput {
+	func updateBtnsTitles(firstBtnTitle: String,
+												secondBtnTitle: String,
+												activeItem: Int)
 }
 
 final class SettingsSegmentedControl: UIView {
+	private enum Constants {
+
+	}
+
 	weak var delegate: SettingsSegmentedControlDelegate?
 
 	private var buttonTitles = [String]()
 	private var buttons = [UIButton]()
 	private var selectorView = UIView()
 
-	private var textColor: UIColor = .white
-	private var selectorViewColor: UIColor = .red
-	private var selectorTextColor: UIColor = .red
+	private var textColor: UIColor = Resourses.Colors.secondaryText
+	private var selectorViewColor: UIColor = .white
+	private var selectorTextColor: UIColor = .black
 
 	public private(set) var selectedIndex: Int = 0
 
-	convenience init(
-		frame: CGRect,
-		buttonTitle: [String]
-	) {
-		self.init(frame: frame)
+	init(buttonTitle: [String] = ["on", "off"]) {
+		super.init(frame: CGRect(x: 0, y: 0, width: 150, height: 48))
 		self.buttonTitles = buttonTitle
+		self.backgroundColor = Resourses.Colors.buttonBackground
+		self.layer.cornerRadius = 8
+		self.layer.masksToBounds = true
 	}
 
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
 	override func draw(_ rect: CGRect) {
 		super.draw(rect)
 		self.backgroundColor = .white
@@ -36,9 +50,9 @@ final class SettingsSegmentedControl: UIView {
 		let button = buttons[index]
 		selectedIndex = index
 		button.setTitleColor(selectorTextColor, for: .normal)
-		let selectorPosition = frame.width/CGFloat(buttonTitles.count) * CGFloat(index)
+		let selectorPosition = frame.width / CGFloat(buttonTitles.count) * CGFloat(index)
 		UIView.animate(withDuration: 0.2) {
-			self.selectorView.frame.origin.x = selectorPosition
+			self.selectorView.frame.origin.x = selectorPosition + 3
 		}
 	}
 
@@ -46,11 +60,11 @@ final class SettingsSegmentedControl: UIView {
 		for (buttonIndex, btn) in buttons.enumerated() {
 			btn.setTitleColor(textColor, for: .normal)
 			if btn == sender {
-				let selectorPosition = frame.width/CGFloat(buttonTitles.count) * CGFloat(buttonIndex)
+				let selectorPosition = frame.width / CGFloat(buttonTitles.count) * CGFloat(buttonIndex)
 				selectedIndex = buttonIndex
-				delegate?.change(toIndex: selectedIndex)
+				delegate?.change(toIndex: selectedIndex, btnText: btn.titleLabel?.text ?? "")
 				UIView.animate(withDuration: 0.3) {
-					self.selectorView.frame.origin.x = selectorPosition
+					self.selectorView.frame.origin.x = selectorPosition + 3
 				}
 				btn.setTitleColor(selectorTextColor, for: .normal)
 			}
@@ -81,12 +95,14 @@ extension SettingsSegmentedControl {
 	}
 
 	private func configSelectorView() {
-		let selectorWidth = frame.width / CGFloat(self.buttonTitles.count)
-		selectorView = UIView(frame: CGRect(x: 0,
-																				y: self.frame.height,
+		let selectorWidth = frame.width / CGFloat(self.buttonTitles.count) - 3 * 2
+		let height = self.frame.height - 3 * 2
+		selectorView = UIView(frame: CGRect(x: 3,
+																				y: 3,
 																				width: selectorWidth,
-																				height: 2))
+																				height: height))
 		selectorView.backgroundColor = selectorViewColor
+		selectorView.layer.cornerRadius = 8
 		addSubview(selectorView)
 	}
 
@@ -97,10 +113,20 @@ extension SettingsSegmentedControl {
 		for buttonTitle in buttonTitles {
 			let button = UIButton(type: .system)
 			button.setTitle(buttonTitle, for: .normal)
-			button.addTarget(self, action:#selector(SettingsSegmentedControl.buttonAction(sender:)), for: .touchUpInside)
+			button.addTarget(self, action: #selector(SettingsSegmentedControl.buttonAction(sender:)), for: .touchUpInside)
 			button.setTitleColor(textColor, for: .normal)
 			buttons.append(button)
 		}
 		buttons[0].setTitleColor(selectorTextColor, for: .normal)
+	}
+}
+
+extension SettingsSegmentedControl: SettingsSegmentedControlInput {
+	func updateBtnsTitles(firstBtnTitle: String,
+												secondBtnTitle: String,
+												activeItem: Int) {
+		buttonTitles = [firstBtnTitle, secondBtnTitle]
+		createButton()
+		setIndex(index: activeItem)
 	}
 }

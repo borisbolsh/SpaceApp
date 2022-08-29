@@ -26,13 +26,11 @@ final class SettingsTableCell: UITableViewCell {
 	weak var output: SettingsTableCellOutput?
 	private var model: SettingsViewModel?
 
+	private let titleLabel = UILabel()
+	private let segmentedControl = SettingsSegmentedControl()
+
 	override init(style: CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-		//		let codeSegmented = SettingsSegmentedControl(frame: CGRect(x: 0, y: 50, width: self.view.frame.width, height: 50), buttonTitle: ["OFF","HTTP","AUTO"])
-		//		codeSegmented.backgroundColor = .clear
-		//		codeSegmented.delegate = self
-		//		view.addSubview(codeSegmented)
 
 		setupUI()
 		configureUI()
@@ -45,52 +43,63 @@ final class SettingsTableCell: UITableViewCell {
 	}
 
 	private func setupUI() {
-//		contentView.addSubview(launchView)
-//		launchView.addSubview(titleLabel)
-//		launchView.addSubview(dateLabel)
-//		launchView.addSubview(statusImageView)
+		contentView.addSubview(titleLabel)
+		contentView.addSubview(segmentedControl)
+
 
 		setupConstraints()
 	}
 
 	private func setupConstraints() {
-//		launchView.translatesAutoresizingMaskIntoConstraints = false
-//		titleLabel.translatesAutoresizingMaskIntoConstraints = false
-//		dateLabel.translatesAutoresizingMaskIntoConstraints = false
-//		statusImageView.translatesAutoresizingMaskIntoConstraints = false
+		titleLabel.translatesAutoresizingMaskIntoConstraints = false
+		segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+
 
 		NSLayoutConstraint.activate ([
-//			launchView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: Constants.LaunchView.insetBottom),
-//			launchView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Constants.LaunchView.insetLeft),
-//			launchView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: Constants.LaunchView.insetRight),
-//			launchView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.LaunchView.insetTop),
-//			launchView.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.LaunchView.heightItem),
-//
-//			titleLabel.topAnchor.constraint(equalTo: launchView.topAnchor, constant: Constants.TitleLabel.insetTop),
-//			titleLabel.leftAnchor.constraint(equalTo: launchView.leftAnchor, constant: Constants.TitleLabel.insetLeft),
-//			titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.TitleLabel.height),
-//
-//			dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-//			dateLabel.leftAnchor.constraint(equalTo: launchView.leftAnchor, constant: Constants.DateLabel.insetLeft),
-//			dateLabel.bottomAnchor.constraint(equalTo: launchView.bottomAnchor, constant: Constants.DateLabel.insetBottom),
-//
-//			statusImageView.centerYAnchor.constraint(equalTo: launchView.centerYAnchor),
-//			statusImageView.rightAnchor.constraint(equalTo: launchView.rightAnchor, constant: Constants.StatusImageView.insetRight),
-//			statusImageView.widthAnchor.constraint(equalToConstant: Constants.StatusImageView.width),
-//			statusImageView.heightAnchor.constraint(equalToConstant: Constants.StatusImageView.height),
+			titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 28),
+			titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+			titleLabel.rightAnchor.constraint(greaterThanOrEqualTo: segmentedControl.leftAnchor, constant: 16),
+
+			segmentedControl.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -28),
+			segmentedControl.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+			segmentedControl.widthAnchor.constraint(equalToConstant: 120),
+			segmentedControl.heightAnchor.constraint(equalToConstant: 40),
+			segmentedControl.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+			segmentedControl.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
 		])
 	}
 
 	private func configureUI() {
 		self.backgroundColor = .clear
 		contentView.backgroundColor = .clear
+//		segmentedControl.backgroundColor = .clear
+
 //		launchView.backgroundColor = Resourses.Colors.secondaryBackground
 //
 //		launchView.layer.cornerRadius = Constants.LaunchView.cornerRadius
 //
 //		titleLabel.font = Resourses.Fonts.detailsLaunchesTitle
-//		titleLabel.textColor = Resourses.Colors.lightText
+		titleLabel.textColor = Resourses.Colors.lightText
 //		dateLabel.textColor = Resourses.Colors.secondaryText
+	}
+
+	private func updateUI() {
+		guard
+			let model = model,
+			let output = output
+		else {
+			return
+		}
+
+		titleLabel.text = model.titleItem
+
+		if let output = output as? SettingsSegmentedControlDelegate {
+			segmentedControl.delegate = output
+		}
+
+		segmentedControl.updateBtnsTitles(firstBtnTitle: model.firstStat,
+																			secondBtnTitle: model.secondStat,
+																			activeItem: model.activeItem == model.firstStat ? 0 : 1)
 	}
 }
 
@@ -104,6 +113,6 @@ extension SettingsTableCell: SettingsTableCellInput {
 		}
 		self.model = model
 		self.output = output
-//		updateUI()
+		updateUI()
 	}
 }
