@@ -19,6 +19,7 @@ protocol MainViewOutput: AnyObject {
 protocol MainInteractorInput: AnyObject {
 	func getRocketsData()
 	func getSettingsData()
+	func setSettingsData(settings: UserSettings)
 }
 
 protocol MainInteractorOutput: AnyObject {

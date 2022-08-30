@@ -9,6 +9,7 @@ final class SettingsPresenter {
 
 	private var userSettings: UserSettings?
 	private let userSettingsFactory: UserSettingsFactoryProtocol
+	private var isChangedUserSettings = false
 
 	init(
 		userSettingsFactory: UserSettingsFactoryProtocol,
@@ -27,6 +28,15 @@ extension SettingsPresenter: SettingsViewOutput {
 	func viewDidLoad(){
 		view?.set(title: Resourses.Settings.titleSectionString)
 		interactor.getSettingsData()
+	}
+
+	func viewWillDisappear() {
+		if isChangedUserSettings {
+			guard let userSettings = userSettings else {
+				return
+			}
+			interactor.setSettingsData(settings: userSettings)
+		}
 	}
 
 	func closeBtnTapped() {
@@ -52,8 +62,20 @@ extension SettingsPresenter: SettingsInteractorOutput {
 }
 
 extension SettingsPresenter: SettingsSegmentedControlDelegate {
-	func change(toIndex: Int, btnText: String) {
-			print("segmentedControl index changed to \(toIndex), btn text - \(btnText)")
+	func change(itemType: SettingsItemType, toActiveItem: String) {
+		print("\(itemType) changed to - \(toActiveItem)")
+
+		guard let userSettings = userSettings else {
+			return
+		}
+//		let itemStr = String(describing: itemType)
+
+//		let mirror = Mirror(reflecting: userSettings)
+//		for child in mirror.children  {
+//				print("key: \(child.label), value: \(child.value)")
+//		}
+//		let itemStr = String(describing: itemType)
+//		let itemKey = mirror.children.filter{ $0.label == itemStr }
 	}
 }
 

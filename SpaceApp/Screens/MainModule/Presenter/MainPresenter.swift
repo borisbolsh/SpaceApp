@@ -54,6 +54,9 @@ extension MainPresenter: MainInteractorOutput {
 
 	func didRecieveNoUserSettings() {
 		userSettings = userSettingsFactory.createFirstSettings()
+		if let userSettings = userSettings {
+			interactor.setSettingsData(settings: userSettings)
+		}
 		interactor.getRocketsData()
 	}
 

@@ -23,4 +23,17 @@ extension SettingsInteractor: SettingsInteractorInput {
 			}
 		}
 	}
+
+	func setSettingsData(settings: UserSettings) {
+		settingsService.setSettings(settings: settings) { result in
+//			guard let self = self else {
+//				return
+//			}
+			if result {
+				print("settings saved")
+			} else {
+				print("somthing wrong")
+			}
+		}
+	}
 }

@@ -21,6 +21,11 @@ final class SettingsViewController: UIViewController {
 		setupSubviews()
 		configurateUI()
 	}
+
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		output.viewWillDisappear()
+	}
 }
 
 // MARK: Setup
@@ -39,7 +44,7 @@ extension SettingsViewController {
 	private func setupRightBarButtons() {
 		let closeButton = UIBarButtonItem(
 			title: Resourses.Settings.closeButtonString,
-			style: .plain,
+			style: .done,
 			target: self,
 			action: #selector(closeBtnTapped)
 		)

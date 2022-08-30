@@ -27,7 +27,7 @@ final class SettingsTableCell: UITableViewCell {
 	private var model: SettingsViewModel?
 
 	private let titleLabel = UILabel()
-	private let segmentedControl = SettingsSegmentedControl()
+	private let segmentedControl = SettingsSegmentedControl(width: 120, height: 40)
 
 	override init(style: CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -97,9 +97,7 @@ final class SettingsTableCell: UITableViewCell {
 			segmentedControl.delegate = output
 		}
 
-		segmentedControl.updateBtnsTitles(firstBtnTitle: model.firstStat,
-																			secondBtnTitle: model.secondStat,
-																			activeItem: model.activeItem == model.firstStat ? 0 : 1)
+		segmentedControl.configure(model: model)
 	}
 }
 

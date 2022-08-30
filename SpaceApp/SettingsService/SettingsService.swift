@@ -2,7 +2,7 @@ import Foundation
 
 protocol DataSettingsServiceProtocol {
 	func getSettings(completion: @escaping (UserSettings?) -> Void)
-	func setSettings(settings: UserSettings)
+	func setSettings(settings: UserSettings, completion: @escaping (Bool) -> Void)
 }
 
 final class SettingsService: DataSettingsServiceProtocol {
@@ -17,21 +17,19 @@ final class SettingsService: DataSettingsServiceProtocol {
 	}
 
 	func getSettings(completion: @escaping (UserSettings?) -> Void) {
-		if let settings: UserSettings = readValue(key: KeyConstants.settingsKey.rawValue) {
-			completion(settings)
+		if let settings = userDefaults.object(forKey: KeyConstants.settingsKey.rawValue) as? Data {
+			if let userSettings = try? JSONDecoder().decode(UserSettings.self, from: settings) {
+				return completion(userSettings)
+			}
 		}
-		completion(nil)
+		return completion(nil)
 	}
 
-	func setSettings(settings: UserSettings) {
-		userDefaults.set(settings, forKey: KeyConstants.settingsKey.rawValue)
-	}
-
-	private func saveValue(key: String, value: Any) {
-		userDefaults.set(value, forKey: key)
-	}
-
-	private func readValue<T>(key: String) -> T? {
-		return userDefaults.value(forKey: key) as? T
+	func setSettings(settings: UserSettings, completion: @escaping (Bool) -> Void) {
+		if let encoded = try? JSONEncoder().encode(settings) {
+			userDefaults.set(encoded, forKey: KeyConstants.settingsKey.rawValue)
+			return completion(true)
+		}
+		return completion(false)
 	}
 }

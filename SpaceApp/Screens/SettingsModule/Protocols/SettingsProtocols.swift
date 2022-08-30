@@ -11,11 +11,13 @@ protocol SettingsViewInput: AnyObject {
 
 protocol SettingsViewOutput: AnyObject {
 	func viewDidLoad()
+	func viewWillDisappear()
 	func closeBtnTapped()
 }
 
 protocol SettingsInteractorInput: AnyObject {
 	func getSettingsData()
+	func setSettingsData(settings: UserSettings)
 }
 
 protocol SettingsInteractorOutput: AnyObject {
