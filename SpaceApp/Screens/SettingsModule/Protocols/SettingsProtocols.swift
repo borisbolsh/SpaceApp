@@ -2,7 +2,9 @@ import Foundation
 
 protocol SettingsModuleInput {}
 
-protocol SettingsModuleOutput: AnyObject {}
+protocol SettingsModuleOutput: AnyObject {
+	func updateUserSettings(userSettings: UserSettings)
+}
 
 protocol SettingsViewInput: AnyObject {
 	func set(title: String)
@@ -29,4 +31,6 @@ protocol SettingsRouterInput: AnyObject {
 	func closeSettinsModule()
 }
 
-protocol SettingsRouterRoutingHandler: AnyObject {}
+protocol SettingsRouterRoutingHandler: AnyObject {
+	func performCloseSettinsModule()
+}

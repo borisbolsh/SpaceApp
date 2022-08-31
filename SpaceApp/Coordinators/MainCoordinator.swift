@@ -6,6 +6,8 @@ final class MainCoordinator: Coordinator {
 	private let appDependency: AppDependency
 	private let navigationController: UINavigationController
 
+	private var mainModulInput: MainModuleInput?
+
 	init(navigationController: UINavigationController,
 			 appDependency: AppDependency) {
 		self.navigationController = navigationController
@@ -24,6 +26,8 @@ final class MainCoordinator: Coordinator {
 			routingHandler: self,
 			moduleOutput: nil
 		)
+
+		mainModulInput = container.input
 
 		navigationController.setViewControllers(
 			[container.viewController],
@@ -47,7 +51,7 @@ final class MainCoordinator: Coordinator {
 		let container = SettingsContainer.assemble(
 			settingsService: appDependency.settingsService,
 			routingHandler: self,
-			moduleOutput: nil
+			moduleOutput: self
 		)
 
 		let settingsNavigationController = UINavigationController()
@@ -67,4 +71,14 @@ extension MainCoordinator: MainRouterRoutingHandler {
 }
 
 extension MainCoordinator: DetailsRouterRoutingHandler {}
-extension MainCoordinator: SettingsRouterRoutingHandler {}
+extension MainCoordinator: SettingsRouterRoutingHandler {
+	func performCloseSettinsModule() {
+		navigationController.dismiss(animated: true, completion: nil)
+	}
+}
+
+extension MainCoordinator: SettingsModuleOutput {
+	func updateUserSettings(userSettings: UserSettings) {
+		mainModulInput?.updateUserSettings(userSettings: userSettings)
+	}
+}

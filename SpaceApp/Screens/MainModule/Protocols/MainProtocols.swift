@@ -1,6 +1,8 @@
 import Foundation
 
-protocol MainModuleInput {}
+protocol MainModuleInput {
+	func updateUserSettings(userSettings: UserSettings)
+}
 
 protocol MainModuleOutput: AnyObject {}
 

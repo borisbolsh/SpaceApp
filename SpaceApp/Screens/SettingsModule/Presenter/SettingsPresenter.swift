@@ -36,6 +36,7 @@ extension SettingsPresenter: SettingsViewOutput {
 				return
 			}
 			interactor.setSettingsData(settings: userSettings)
+			moduleOutput?.updateUserSettings(userSettings: userSettings)
 		}
 	}
 
@@ -62,20 +63,37 @@ extension SettingsPresenter: SettingsInteractorOutput {
 }
 
 extension SettingsPresenter: SettingsSegmentedControlDelegate {
-	func change(itemType: SettingsItemType, toActiveItem: String) {
-		print("\(itemType) changed to - \(toActiveItem)")
-
-		guard let userSettings = userSettings else {
-			return
+	func changeUserSettings(itemType: SettingsItemType, toActiveItem: String) {
+		switch itemType {
+		case .height:
+			if userSettings?.height.rawValue != toActiveItem {
+				self.userSettings?.height = UnitOfLength.feet.rawValue == toActiveItem ? .feet : .meters
+				userSettingsDidChanged()
+			}
+		case .diameter:
+			if userSettings?.diameter.rawValue != toActiveItem {
+				self.userSettings?.diameter = UnitOfLength.feet.rawValue == toActiveItem ? .feet : .meters
+				userSettingsDidChanged()
+			}
+		case .mass:
+			if userSettings?.mass.rawValue != toActiveItem {
+				self.userSettings?.mass = UnitsOfMass.kilograms.rawValue == toActiveItem ? .kilograms : .pound
+				userSettingsDidChanged()
+			}
+		case .payloadWeights:
+			if userSettings?.payloadWeights.rawValue != toActiveItem {
+				self.userSettings?.payloadWeights = UnitsOfMass.kilograms.rawValue == toActiveItem ? .kilograms : .pound
+				userSettingsDidChanged()
+			}
 		}
-//		let itemStr = String(describing: itemType)
+	}
+}
 
-//		let mirror = Mirror(reflecting: userSettings)
-//		for child in mirror.children  {
-//				print("key: \(child.label), value: \(child.value)")
-//		}
-//		let itemStr = String(describing: itemType)
-//		let itemKey = mirror.children.filter{ $0.label == itemStr }
+extension SettingsPresenter {
+	private func userSettingsDidChanged() {
+		if !isChangedUserSettings {
+			isChangedUserSettings = true
+		}
 	}
 }
 

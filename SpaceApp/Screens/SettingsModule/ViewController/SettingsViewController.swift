@@ -1,6 +1,11 @@
 import UIKit
 
 final class SettingsViewController: UIViewController {
+	private enum Constants {
+		enum TableView {
+			static let insetTop: CGFloat = 56
+		}
+	}
 	private let output: SettingsViewOutput
 	
 	private let tableView = UITableView()
@@ -56,7 +61,7 @@ extension SettingsViewController {
 		tableView.frame = view.bounds
 		tableView.dataSource = self
 		tableView.rowHeight = UITableView.automaticDimension
-		tableView.contentInset.top = 56
+		tableView.contentInset.top = Constants.TableView.insetTop
 
 		tableView.register(SettingsTableCell.self, forCellReuseIdentifier: String(describing: SettingsTableCell.self))
 

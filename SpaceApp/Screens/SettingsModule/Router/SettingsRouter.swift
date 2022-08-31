@@ -1,11 +1,11 @@
-import Foundation
+import UIKit
 
 final class SettingsRouter {
 	weak var routingHandler: SettingsRouterRoutingHandler?
 }
 
 extension SettingsRouter: SettingsRouterInput {
-	func closeSettinsModule(){}
+	func closeSettinsModule() {
+		routingHandler?.performCloseSettinsModule()
+	}
 }
-
-extension SettingsRouter: SettingsRouterRoutingHandler {}

@@ -1,7 +1,7 @@
 import UIKit
 
 protocol SettingsSegmentedControlDelegate: AnyObject {
-	func change(itemType: SettingsItemType, toActiveItem: String)
+	func changeUserSettings(itemType: SettingsItemType, toActiveItem: String)
 }
 
 protocol SettingsSegmentedControlInput {
@@ -26,8 +26,8 @@ final class SettingsSegmentedControl: UIView {
 
 	private var selectedIndex: Int = 0
 
-	init(width: CGFloat, height: CGFloat) {
-		super.init(frame: CGRect(x: 0, y: 0, width: width, height: height))
+	init() {
+		super.init(frame: .zero)
 		self.buttonTitles =  ["on", "off"]
 
 		configurateUI()
@@ -52,7 +52,7 @@ final class SettingsSegmentedControl: UIView {
 			if btn == sender {
 				let selectorPosition = frame.width / CGFloat(buttonTitles.count) * CGFloat(buttonIndex)
 				selectedIndex = buttonIndex
-				delegate?.change(itemType: viewModel.itemType, toActiveItem: btn.titleLabel?.text ?? "")
+				delegate?.changeUserSettings(itemType: viewModel.itemType, toActiveItem: btn.titleLabel?.text ?? "")
 				UIView.animate(withDuration: 0.3) {
 					self.selectorView.frame.origin.x = selectorPosition + 3
 				}
@@ -114,22 +114,12 @@ extension SettingsSegmentedControl {
 			buttons.append(button)
 		}
 		buttons[selectedIndex].setTitleColor(selectorTextColor, for: .normal)
-//		selectedViewPosition()
 	}
-
-//	private func selectedViewPosition() {
-//		let selectorPosition = frame.width / CGFloat(buttonTitles.count) * CGFloat(selectedIndex)
-//		UIView.animate(withDuration: 0.3) {
-//			self.selectorView.frame.origin.x = selectorPosition + 3
-//		}
-//	}
 
 	private func configurateUI() {
 		self.backgroundColor = Resourses.Colors.buttonBackground
 		self.layer.cornerRadius = Constants.cornerRadius
 		self.layer.masksToBounds = true
-
-
 	}
 }
 

@@ -10,6 +10,7 @@ final class MainPresenter {
 
 	private let rocketViewModelsMapper = RocketViewModelMapper()
 	private var userSettings: UserSettings?
+	private var rockets: [RocketsDTO]?
 
 	init(
 		router: MainRouterInput,
@@ -22,15 +23,37 @@ final class MainPresenter {
 	}
 }
 
-extension MainPresenter: MainModuleInput {}
+// MARK: Module input
 
-//MARK: Private
+extension MainPresenter: MainModuleInput {
+	func updateUserSettings(userSettings: UserSettings) {
+		self.userSettings = userSettings
+
+		guard let rockets = rockets else {
+			return
+		}
+		showRockets(rocketItems: rockets)
+	}
+}
+
+// MARK: Private
 
 extension MainPresenter {
 	private func showError() {
 		print("show error alert")
 	}
+
+	private func showRockets(rocketItems: [RocketsDTO]) {
+		guard let userSettings = userSettings else {
+			return
+		}
+
+		let viewModels = rocketViewModelsMapper.map(rocketItems: rocketItems, userSettings: userSettings)
+		view?.set(viewModels: viewModels)
+	}
 }
+
+// MARK: View output
 
 extension MainPresenter: MainViewOutput {
 	func viewDidLoad(){
@@ -45,6 +68,8 @@ extension MainPresenter: MainViewOutput {
 		view?.showPreviousRocket()
 	}
 }
+
+// MARK: Interactor output
 
 extension MainPresenter: MainInteractorOutput {
 	func didRecieveUserSettings(settings: UserSettings) {
@@ -61,12 +86,8 @@ extension MainPresenter: MainInteractorOutput {
 	}
 
 	func didRecieveRockets(rockets: [RocketsDTO]) {
-		guard let userSettings = userSettings else {
-			return
-		}
-
-		let viewModels = rocketViewModelsMapper.map(rocketItems: rockets, userSettings: userSettings)
-		view?.set(viewModels: viewModels)
+		self.rockets = rockets
+		showRockets(rocketItems: rockets)
 	}
 
 	func didRecieveError() {

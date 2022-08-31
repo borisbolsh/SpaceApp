@@ -13,25 +13,28 @@ protocol SettingsTableCellOutput: AnyObject {
 
 final class SettingsTableCell: UITableViewCell {
 	private enum Constants {
-//		enum LaunchView {
-//			static let heightItem: CGFloat = 100
-//			static let insetTop: CGFloat = 8
-//			static let insetBottom: CGFloat = -8
-//			static let insetLeft: CGFloat = 32
-//			static let insetRight: CGFloat = -32
-//			static let cornerRadius: CGFloat = 20
-//		}
+		enum TitleLabel {
+			static let leftInset: CGFloat = 28
+			static let rightInset: CGFloat = -16
+		}
+
+		enum SegmentedControl {
+			static let width: CGFloat = 120
+			static let height: CGFloat = 40
+			static let insetTop: CGFloat = 12
+			static let insetBottom: CGFloat = -12
+			static let insetRight: CGFloat = -28
+		}
 	}
 
 	weak var output: SettingsTableCellOutput?
 	private var model: SettingsViewModel?
 
 	private let titleLabel = UILabel()
-	private let segmentedControl = SettingsSegmentedControl(width: 120, height: 40)
+	private let segmentedControl = SettingsSegmentedControl()
 
 	override init(style: CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-
 		setupUI()
 		configureUI()
 	}
@@ -46,7 +49,6 @@ final class SettingsTableCell: UITableViewCell {
 		contentView.addSubview(titleLabel)
 		contentView.addSubview(segmentedControl)
 
-
 		setupConstraints()
 	}
 
@@ -54,39 +56,28 @@ final class SettingsTableCell: UITableViewCell {
 		titleLabel.translatesAutoresizingMaskIntoConstraints = false
 		segmentedControl.translatesAutoresizingMaskIntoConstraints = false
 
-
 		NSLayoutConstraint.activate ([
-			titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 28),
+			titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Constants.TitleLabel.leftInset),
 			titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-			titleLabel.rightAnchor.constraint(greaterThanOrEqualTo: segmentedControl.leftAnchor, constant: 16),
+			titleLabel.rightAnchor.constraint(greaterThanOrEqualTo: segmentedControl.leftAnchor, constant: Constants.TitleLabel.rightInset),
 
-			segmentedControl.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -28),
-			segmentedControl.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-			segmentedControl.widthAnchor.constraint(equalToConstant: 120),
-			segmentedControl.heightAnchor.constraint(equalToConstant: 40),
-			segmentedControl.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-			segmentedControl.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
+			segmentedControl.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: Constants.SegmentedControl.insetRight),
+			segmentedControl.widthAnchor.constraint(equalToConstant: Constants.SegmentedControl.width),
+			segmentedControl.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.SegmentedControl.height),
+			segmentedControl.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.SegmentedControl.insetTop),
+			segmentedControl.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: Constants.SegmentedControl.insetBottom),
 		])
 	}
 
 	private func configureUI() {
 		self.backgroundColor = .clear
 		contentView.backgroundColor = .clear
-//		segmentedControl.backgroundColor = .clear
-
-//		launchView.backgroundColor = Resourses.Colors.secondaryBackground
-//
-//		launchView.layer.cornerRadius = Constants.LaunchView.cornerRadius
-//
-//		titleLabel.font = Resourses.Fonts.detailsLaunchesTitle
 		titleLabel.textColor = Resourses.Colors.lightText
-//		dateLabel.textColor = Resourses.Colors.secondaryText
 	}
 
 	private func updateUI() {
-		guard
-			let model = model,
-			let output = output
+		guard let model = model,
+					let output = output
 		else {
 			return
 		}
@@ -96,7 +87,6 @@ final class SettingsTableCell: UITableViewCell {
 		if let output = output as? SettingsSegmentedControlDelegate {
 			segmentedControl.delegate = output
 		}
-
 		segmentedControl.configure(model: model)
 	}
 }

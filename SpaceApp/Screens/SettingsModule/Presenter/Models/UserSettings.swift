@@ -1,16 +1,10 @@
 import Foundation
 
 struct UserSettings: Codable {
-	let height: UnitOfLength
-	let diameter: UnitOfLength
-	let mass: UnitsOfMass
-	let payloadWeights: UnitsOfMass
-//	var dictionary: [String: Any] {
-//				return ["height": height,
-//								"diameter": diameter,
-//								"mass": mass,
-//								"payloadWeights": payloadWeights]
-//		}
+	var height: UnitOfLength
+	var diameter: UnitOfLength
+	var mass: UnitsOfMass
+	var payloadWeights: UnitsOfMass
 }
 
 enum UnitOfLength: String, Codable {
