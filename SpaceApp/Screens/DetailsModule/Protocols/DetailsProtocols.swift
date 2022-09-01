@@ -7,6 +7,7 @@ protocol DetailsModuleOutput: AnyObject {}
 protocol DetailsViewInput: AnyObject {
 	func set(title: String)
 	func set(viewModels: [LaunchViewModel])
+	func showEmptyScreen(viewModel: EmptyViewViewModel)
 }
 
 protocol DetailsViewOutput: AnyObject {

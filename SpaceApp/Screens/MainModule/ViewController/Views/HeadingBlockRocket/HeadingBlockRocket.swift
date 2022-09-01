@@ -60,7 +60,6 @@ extension HeadingBlockRocket: HeadingBlockRocketViewInput {
 
 extension HeadingBlockRocket {
 	@objc func didTapOnSettingsBtn() {
-		 print("Settings tapped")
 		 output?.didTapOnSettings()
 	 }
 }

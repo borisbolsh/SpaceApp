@@ -38,6 +38,16 @@ extension DetailsPresenter: DetailsInteractorOutput {
 		self.launches = launches.filter { $0.rocketId == idRocket }
 		.sorted(by: { $0.dateLaunchUnix > $1.dateLaunchUnix })
 
+		if self.launches.first == nil {
+			view?.showEmptyScreen(
+				viewModel: EmptyViewViewModel(
+					title: Resourses.EmptyView.titleDetailString,
+					subtitle: Resourses.EmptyView.subtitleDetailString
+				)
+			)
+			return
+		}
+
 		let viewModels = launchViewModelsMapper.map(launchesItems: self.launches)
 		view?.set(viewModels: viewModels)
 	}

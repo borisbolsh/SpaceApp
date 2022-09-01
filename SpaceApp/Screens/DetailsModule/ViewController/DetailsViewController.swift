@@ -5,6 +5,7 @@ final class DetailsViewController: UIViewController {
 
 	private let tableView = UITableView()
 	private var viewModels: [LaunchViewModel] = []
+	private lazy var emptyView = EmptyView()
 
 	init(output: DetailsViewOutput) {
 		self.output = output
@@ -34,6 +35,20 @@ extension DetailsViewController: DetailsViewInput {
 	func set(viewModels: [LaunchViewModel]) {
 		self.viewModels = viewModels
 		tableView.reloadData()
+	}
+
+	func showEmptyScreen(viewModel: EmptyViewViewModel) {
+		tableView.isHidden = true
+		view.addSubview(emptyView)
+		emptyView.translatesAutoresizingMaskIntoConstraints = false
+
+		NSLayoutConstraint.activate([
+			emptyView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+			emptyView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+		])
+
+		emptyView.update(title: viewModel.title,
+										 subtitle: viewModel.subtitle)
 	}
 }
 

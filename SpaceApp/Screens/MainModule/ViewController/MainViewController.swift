@@ -256,7 +256,7 @@ extension MainViewController {
 
 		let image = Resourses.Images.rocket?.withRenderingMode(.alwaysTemplate)
 
-		placeholderImage.tintColor = .white
+		placeholderImage.tintColor = .white.withAlphaComponent(0.5)
 		placeholderImage.image = image
 		imageRocket.backgroundColor = Resourses.Colors.secondaryBackground
 	}

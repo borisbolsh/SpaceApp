@@ -17,7 +17,6 @@ final class FeaturesBlockRocket: UIView {
 	private let contentView = UIView()
 
 	private var viewModels: [FeatureViewModel]?
-	private var featureItems = [FeatureItem]()
 	private var stackView = UIStackView()
 
 	override func awakeFromNib() {

@@ -71,4 +71,9 @@ enum Resourses {
 		static let closeButtonString = "Закрыть"
 		static let titleSectionString = "Настройки"
 	}
+
+	enum EmptyView {
+		static let titleDetailString = "Нет информации"
+		static let subtitleDetailString = "В данный момент нет информации по запусках"
+	}
 }

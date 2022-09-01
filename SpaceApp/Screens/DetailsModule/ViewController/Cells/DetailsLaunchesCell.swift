@@ -18,11 +18,13 @@ final class DetailsLaunchesCell: UITableViewCell {
 		enum TitleLabel {
 			static let insetTop: CGFloat = 24
 			static let insetLeft: CGFloat = 24
+			static let insetRight: CGFloat = -24
 			static let height: CGFloat = 24
 		}
 
 		enum DateLabel {
 			static let insetLeft: CGFloat = 24
+			static let insetRight: CGFloat = -24
 			static let insetBottom: CGFloat = -20
 		}
 
@@ -74,10 +76,12 @@ final class DetailsLaunchesCell: UITableViewCell {
 
 			titleLabel.topAnchor.constraint(equalTo: launchView.topAnchor, constant: Constants.TitleLabel.insetTop),
 			titleLabel.leftAnchor.constraint(equalTo: launchView.leftAnchor, constant: Constants.TitleLabel.insetLeft),
+			titleLabel.rightAnchor.constraint(equalTo:  statusImageView.leftAnchor, constant: Constants.TitleLabel.insetRight),
 			titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.TitleLabel.height),
 
 			dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
 			dateLabel.leftAnchor.constraint(equalTo: launchView.leftAnchor, constant: Constants.DateLabel.insetLeft),
+			dateLabel.rightAnchor.constraint(equalTo:  statusImageView.leftAnchor, constant: Constants.DateLabel.insetRight),
 			dateLabel.bottomAnchor.constraint(equalTo: launchView.bottomAnchor, constant: Constants.DateLabel.insetBottom),
 
 			statusImageView.centerYAnchor.constraint(equalTo: launchView.centerYAnchor),
