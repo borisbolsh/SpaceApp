@@ -21,7 +21,7 @@ final class EmptyView: UIView {
 		}
 
 		enum Title {
-			static let topInset: CGFloat = 20
+			static let topInset: CGFloat = 36
 			static let leftInset: CGFloat = 16
 			static let rightInset: CGFloat = -16
 		}

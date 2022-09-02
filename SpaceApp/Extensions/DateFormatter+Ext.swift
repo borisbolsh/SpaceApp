@@ -7,4 +7,17 @@ extension DateFormatter {
 
 		return dateFormatter
 	}()
+
+	static func getRocketFormattedDate(string: String) -> String? {
+		let dateFormatterGet = DateFormatter()
+		dateFormatterGet.dateFormat = "yyyy-MM-dd"
+
+		let date: Date? = dateFormatterGet.date(from: string)
+
+		guard let date = date else {
+			return nil
+		}
+
+		return DateFormatter.launchDateTimeFormatter.string(from: date)
+	}
 }

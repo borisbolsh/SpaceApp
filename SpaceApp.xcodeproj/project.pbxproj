@@ -62,6 +62,7 @@
 		45D06DDF28B6898A005B6C23 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DDE28B6898A005B6C23 /* DetailsPresenter.swift */; };
 		45D06DE228B68A37005B6C23 /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DE128B68A37005B6C23 /* DetailsRouter.swift */; };
 		45D06DE428B68A72005B6C23 /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D06DE328B68A72005B6C23 /* DetailsInteractor.swift */; };
+		45D2DCE228C28BA2005C6E1B /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2DCE128C28BA2005C6E1B /* String+Ext.swift */; };
 		45DC1E9428BBF6610009EC23 /* SettingsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC1E9328BBF6610009EC23 /* SettingsItemViewModel.swift */; };
 		45E2F07328B69CE5007A45A3 /* DetailsLaunchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E2F07228B69CE5007A45A3 /* DetailsLaunchesCell.swift */; };
 		45EDDA4E28BA3B8100F912A5 /* SettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EDDA4D28BA3B8100F912A5 /* SettingsTableCell.swift */; };
@@ -125,6 +126,7 @@
 		45D06DDE28B6898A005B6C23 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
 		45D06DE128B68A37005B6C23 /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
 		45D06DE328B68A72005B6C23 /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
+		45D2DCE128C28BA2005C6E1B /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		45DC1E9328BBF6610009EC23 /* SettingsItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemViewModel.swift; sourceTree = "<group>"; };
 		45E2F07228B69CE5007A45A3 /* DetailsLaunchesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsLaunchesCell.swift; sourceTree = "<group>"; };
 		45EDDA4D28BA3B8100F912A5 /* SettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableCell.swift; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 			children = (
 				45CE23B828B18A5F008E4454 /* UINavigationController+Ext.swift */,
 				452E299528B81B6B00D9A4C5 /* DateFormatter+Ext.swift */,
+				45D2DCE128C28BA2005C6E1B /* String+Ext.swift */,
 				45CE23B928B18A5F008E4454 /* UIColor+Ext.swift */,
 				459CF67628B5683F00478AD5 /* UIStackView+Ext.swift */,
 				45CE23BA28B18A5F008E4454 /* UIView+Ext.swift */,
@@ -707,6 +710,7 @@
 				45C4800028AAA3C60003A755 /* Constants.swift in Sources */,
 				45D06DDF28B6898A005B6C23 /* DetailsPresenter.swift in Sources */,
 				452E299628B81B6B00D9A4C5 /* DateFormatter+Ext.swift in Sources */,
+				45D2DCE228C28BA2005C6E1B /* String+Ext.swift in Sources */,
 				45C4801F28AAE7DE0003A755 /* SpacexDataService.swift in Sources */,
 				458EED7228AC3093003ABC7F /* RocketViewModel.swift in Sources */,
 				45CE23BD28B18A5F008E4454 /* UIView+Ext.swift in Sources */,

@@ -10,7 +10,9 @@ final class RocketViewModelMapper {
 				imageName: ($0.images.first ?? "") ?? "",
 				features: [
 					FeatureViewModel(
-						title: userSettings.height == .feet ? String($0.height.feet) : String($0.height.meters),
+						title: userSettings.height == .feet
+							? String.getNumericString(number: $0.height.feet)
+							: String.getNumericString(number: $0.height.meters),
 						subtitle: "\(Resourses.Features.heightString), \(userSettings.height.rawValue)"
 					),
 					FeatureViewModel(
@@ -18,24 +20,28 @@ final class RocketViewModelMapper {
 						subtitle: "\(Resourses.Features.diameterString), \(userSettings.diameter.rawValue)"
 					),
 					FeatureViewModel(
-						title: userSettings.mass == .pound ? String($0.mass.lb) : String($0.mass.kg) ,
+						title: userSettings.mass == .pound
+						? String.getNumericString(number: $0.mass.lb)
+						: String.getNumericString(number: $0.mass.kg),
 						subtitle: "\(Resourses.Features.massString), \(userSettings.mass.rawValue)"
 					),
 					FeatureViewModel(
-						title: userSettings.payloadWeights == .pound ? String($0.payloadWeightsRocket.filter{ $0.id == "leo" }.first?.lb ?? 1) : String($0.payloadWeightsRocket.filter{ $0.id == "leo" }.first?.kg ?? 1),
+						title: userSettings.payloadWeights == .pound
+						? String.getNumericString(number: $0.payloadWeightsRocket.filter{ $0.id == "leo" }.first?.lb ?? 1)
+						: String.getNumericString(number: $0.payloadWeightsRocket.filter{ $0.id == "leo" }.first?.kg ?? 1),
 						subtitle: "\(Resourses.Features.payloadWeightsString), \(userSettings.payloadWeights.rawValue)"
 					)
 				],
 				mainInfo: [
 					MainInfoViewModel(
 						info: Resourses.MainInfo.firstFlyString,
-						value: $0.firstFlight),
+						value: DateFormatter.getRocketFormattedDate(string: $0.firstFlight) ?? ""),
 					MainInfoViewModel(
 						info: Resourses.MainInfo.countryString,
 						value: $0.country),
 					MainInfoViewModel(
 						info: Resourses.MainInfo.flyPriceString,
-						value: String($0.price))
+						value: String.getMoneyString(sum: $0.price))
 				],
 				firstStageInfo: StageInfoViewModel(
 					headingStage: Resourses.StageInfo.firstStageTitleString,
